@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>  <annotatorImplementationName>cl.uach.kelluwen.nlp.engines.metrics.InverseTokenFrequency</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>InverseTokenFrequency-AE</name>
+    <description>Annotate the inverse frequency of each tokens in the current document using an external resource.</description>
+    <version>1.0</version>
+    <vendor>Universidad Austral de Chile - Kelluwen</vendor>
+    <configurationParameters>
+      <configurationParameter>
+        <name>Filename</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>Filename</name>
+        <value>
+          <string>/home/mvernier/DONNEES/LEXIQUE/Sadowsky_&amp;_Martinez_-_LIFCACH-2.0/simple-espanol-chile-frequency.csv</string>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <typeSystemDescription/>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs/>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+  <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <name>TypeSystem-Kelluwen-NLP</name>
+    <description>UIMA Annotations type system for the Kelluwen-NLP project</description>
+    <version>1.0</version>
+    <vendor>Universidad Austral de Chile - Kelluwen</vendor>
+  <types>
+    <typeDescription>
+      <name>cl.uach.kelluwen.nlp.types.Token</name>
+      <description>Annotation covering simples tokens (simples words)</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+    <features>
+        <featureDescription>
+          <name>lemma</name>
+          <description>token's lemma</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>pos</name>
+          <description>normalized grammatical category</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>posTreeTagger</name>
+          <description>grammatical category according to the external tool : TreeTagger (not normalized !)</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      <featureDescription>
+          <name>tokenFrequency</name>
+          <description>give the frequency of this token in the current jcas</description>
+          <rangeTypeName>uima.cas.Float</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>inverseTokenFrequency</name>
+          <description>gives the frequency of this token in the lenguage</description>
+          <rangeTypeName>uima.cas.Float</rangeTypeName>
+        </featureDescription>
+      <featureDescription>
+          <name>TfItf</name>
+          <description>TF * ITF score</description>
+          <rangeTypeName>uima.cas.Float</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  </types>
+</typeSystemDescription>
