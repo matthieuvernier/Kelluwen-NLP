@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
-  <primitive>true</primitive>  <annotatorImplementationName>cl.uach.kelluwen.nlp.engines.metrics.InverseTokenFrequency</annotatorImplementationName>
+  <primitive>true</primitive>  <annotatorImplementationName>cl.uach.kelluwen.nlp.engines.metrics.LanguageTokenFrequency</annotatorImplementationName>
   <analysisEngineMetaData>
-    <name>InverseTokenFrequency-AE</name>
+    <name>LanguageTokenFrequency-AE</name>
     <description>Annotate the inverse frequency of each tokens in the current document using an external resource.</description>
     <version>1.0</version>
     <vendor>Universidad Austral de Chile - Kelluwen</vendor>

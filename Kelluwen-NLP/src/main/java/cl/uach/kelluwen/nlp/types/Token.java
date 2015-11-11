@@ -11,8 +11,8 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** Annotation covering simples tokens (simples words)
- * Updated by JCasGen Fri Nov 06 17:24:47 CLT 2015
- * XML source: /home/mvernier/DEVELOPPEMENT/eclipse_workspace/Kelluwen-NLP/src/main/resources/cl/uach/kelluwen/nlp/types/TypeSystem-Kelluwen-NLP.xml
+ * Updated by JCasGen Wed Nov 11 10:30:04 CLT 2015
+ * XML source: /home/mvernier/git/Kelluwen-NLP/Kelluwen-NLP/src/main/resources/cl/uach/kelluwen/nlp/types/TypeSystem-Kelluwen-NLP.xml
  * @generated */
 public class Token extends Annotation {
   /** @generated
@@ -141,69 +141,157 @@ public class Token extends Annotation {
    
     
   //*--------------*
-  //* Feature: tokenFrequency
+  //* Feature: textTokenFrequency
 
-  /** getter for tokenFrequency - gets give the frequency of this token in the current jcas
+  /** getter for textTokenFrequency - gets give the frequency of this token in the current text
    * @generated
    * @return value of the feature 
    */
-  public float getTokenFrequency() {
-    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_tokenFrequency == null)
-      jcasType.jcas.throwFeatMissing("tokenFrequency", "cl.uach.kelluwen.nlp.types.Token");
-    return jcasType.ll_cas.ll_getFloatValue(addr, ((Token_Type)jcasType).casFeatCode_tokenFrequency);}
+  public float getTextTokenFrequency() {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_textTokenFrequency == null)
+      jcasType.jcas.throwFeatMissing("textTokenFrequency", "cl.uach.kelluwen.nlp.types.Token");
+    return jcasType.ll_cas.ll_getFloatValue(addr, ((Token_Type)jcasType).casFeatCode_textTokenFrequency);}
     
-  /** setter for tokenFrequency - sets give the frequency of this token in the current jcas 
+  /** setter for textTokenFrequency - sets give the frequency of this token in the current text 
    * @generated
    * @param v value to set into the feature 
    */
-  public void setTokenFrequency(float v) {
-    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_tokenFrequency == null)
-      jcasType.jcas.throwFeatMissing("tokenFrequency", "cl.uach.kelluwen.nlp.types.Token");
-    jcasType.ll_cas.ll_setFloatValue(addr, ((Token_Type)jcasType).casFeatCode_tokenFrequency, v);}    
+  public void setTextTokenFrequency(float v) {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_textTokenFrequency == null)
+      jcasType.jcas.throwFeatMissing("textTokenFrequency", "cl.uach.kelluwen.nlp.types.Token");
+    jcasType.ll_cas.ll_setFloatValue(addr, ((Token_Type)jcasType).casFeatCode_textTokenFrequency, v);}    
    
     
   //*--------------*
-  //* Feature: inverseTokenFrequency
+  //* Feature: languageTokenFrequency
 
-  /** getter for inverseTokenFrequency - gets gives the frequency of this token in the lenguage
+  /** getter for languageTokenFrequency - gets gives the frequency of this token in the language
    * @generated
    * @return value of the feature 
    */
-  public float getInverseTokenFrequency() {
-    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_inverseTokenFrequency == null)
-      jcasType.jcas.throwFeatMissing("inverseTokenFrequency", "cl.uach.kelluwen.nlp.types.Token");
-    return jcasType.ll_cas.ll_getFloatValue(addr, ((Token_Type)jcasType).casFeatCode_inverseTokenFrequency);}
+  public float getLanguageTokenFrequency() {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_languageTokenFrequency == null)
+      jcasType.jcas.throwFeatMissing("languageTokenFrequency", "cl.uach.kelluwen.nlp.types.Token");
+    return jcasType.ll_cas.ll_getFloatValue(addr, ((Token_Type)jcasType).casFeatCode_languageTokenFrequency);}
     
-  /** setter for inverseTokenFrequency - sets gives the frequency of this token in the lenguage 
+  /** setter for languageTokenFrequency - sets gives the frequency of this token in the language 
    * @generated
    * @param v value to set into the feature 
    */
-  public void setInverseTokenFrequency(float v) {
-    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_inverseTokenFrequency == null)
-      jcasType.jcas.throwFeatMissing("inverseTokenFrequency", "cl.uach.kelluwen.nlp.types.Token");
-    jcasType.ll_cas.ll_setFloatValue(addr, ((Token_Type)jcasType).casFeatCode_inverseTokenFrequency, v);}    
+  public void setLanguageTokenFrequency(float v) {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_languageTokenFrequency == null)
+      jcasType.jcas.throwFeatMissing("languageTokenFrequency", "cl.uach.kelluwen.nlp.types.Token");
+    jcasType.ll_cas.ll_setFloatValue(addr, ((Token_Type)jcasType).casFeatCode_languageTokenFrequency, v);}    
    
     
   //*--------------*
-  //* Feature: TfItf
+  //* Feature: puntajeRelevancia
 
-  /** getter for TfItf - gets TF * ITF score
+  /** getter for puntajeRelevancia - gets TF * ITF score
    * @generated
    * @return value of the feature 
    */
-  public float getTfItf() {
-    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_TfItf == null)
-      jcasType.jcas.throwFeatMissing("TfItf", "cl.uach.kelluwen.nlp.types.Token");
-    return jcasType.ll_cas.ll_getFloatValue(addr, ((Token_Type)jcasType).casFeatCode_TfItf);}
+  public float getPuntajeRelevancia() {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_puntajeRelevancia == null)
+      jcasType.jcas.throwFeatMissing("puntajeRelevancia", "cl.uach.kelluwen.nlp.types.Token");
+    return jcasType.ll_cas.ll_getFloatValue(addr, ((Token_Type)jcasType).casFeatCode_puntajeRelevancia);}
     
-  /** setter for TfItf - sets TF * ITF score 
+  /** setter for puntajeRelevancia - sets TF * ITF score 
    * @generated
    * @param v value to set into the feature 
    */
-  public void setTfItf(float v) {
-    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_TfItf == null)
-      jcasType.jcas.throwFeatMissing("TfItf", "cl.uach.kelluwen.nlp.types.Token");
-    jcasType.ll_cas.ll_setFloatValue(addr, ((Token_Type)jcasType).casFeatCode_TfItf, v);}    
+  public void setPuntajeRelevancia(float v) {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_puntajeRelevancia == null)
+      jcasType.jcas.throwFeatMissing("puntajeRelevancia", "cl.uach.kelluwen.nlp.types.Token");
+    jcasType.ll_cas.ll_setFloatValue(addr, ((Token_Type)jcasType).casFeatCode_puntajeRelevancia, v);}    
+   
+    
+  //*--------------*
+  //* Feature: textTokenRank
+
+  /** getter for textTokenRank - gets Rank of this token in the text according to it frequency
+   * @generated
+   * @return value of the feature 
+   */
+  public int getTextTokenRank() {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_textTokenRank == null)
+      jcasType.jcas.throwFeatMissing("textTokenRank", "cl.uach.kelluwen.nlp.types.Token");
+    return jcasType.ll_cas.ll_getIntValue(addr, ((Token_Type)jcasType).casFeatCode_textTokenRank);}
+    
+  /** setter for textTokenRank - sets Rank of this token in the text according to it frequency 
+   * @generated
+   * @param v value to set into the feature 
+   */
+  public void setTextTokenRank(int v) {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_textTokenRank == null)
+      jcasType.jcas.throwFeatMissing("textTokenRank", "cl.uach.kelluwen.nlp.types.Token");
+    jcasType.ll_cas.ll_setIntValue(addr, ((Token_Type)jcasType).casFeatCode_textTokenRank, v);}    
+   
+    
+  //*--------------*
+  //* Feature: languageTokenRank
+
+  /** getter for languageTokenRank - gets Rank of this token according to it frequency in the language
+   * @generated
+   * @return value of the feature 
+   */
+  public int getLanguageTokenRank() {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_languageTokenRank == null)
+      jcasType.jcas.throwFeatMissing("languageTokenRank", "cl.uach.kelluwen.nlp.types.Token");
+    return jcasType.ll_cas.ll_getIntValue(addr, ((Token_Type)jcasType).casFeatCode_languageTokenRank);}
+    
+  /** setter for languageTokenRank - sets Rank of this token according to it frequency in the language 
+   * @generated
+   * @param v value to set into the feature 
+   */
+  public void setLanguageTokenRank(int v) {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_languageTokenRank == null)
+      jcasType.jcas.throwFeatMissing("languageTokenRank", "cl.uach.kelluwen.nlp.types.Token");
+    jcasType.ll_cas.ll_setIntValue(addr, ((Token_Type)jcasType).casFeatCode_languageTokenRank, v);}    
+   
+    
+  //*--------------*
+  //* Feature: frequencyGap
+
+  /** getter for frequencyGap - gets Frequency gap between text frequency and language frequency
+   * @generated
+   * @return value of the feature 
+   */
+  public float getFrequencyGap() {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_frequencyGap == null)
+      jcasType.jcas.throwFeatMissing("frequencyGap", "cl.uach.kelluwen.nlp.types.Token");
+    return jcasType.ll_cas.ll_getFloatValue(addr, ((Token_Type)jcasType).casFeatCode_frequencyGap);}
+    
+  /** setter for frequencyGap - sets Frequency gap between text frequency and language frequency 
+   * @generated
+   * @param v value to set into the feature 
+   */
+  public void setFrequencyGap(float v) {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_frequencyGap == null)
+      jcasType.jcas.throwFeatMissing("frequencyGap", "cl.uach.kelluwen.nlp.types.Token");
+    jcasType.ll_cas.ll_setFloatValue(addr, ((Token_Type)jcasType).casFeatCode_frequencyGap, v);}    
+   
+    
+  //*--------------*
+  //* Feature: rankGap
+
+  /** getter for rankGap - gets rank gap between rank in the text and rank in the language
+   * @generated
+   * @return value of the feature 
+   */
+  public int getRankGap() {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_rankGap == null)
+      jcasType.jcas.throwFeatMissing("rankGap", "cl.uach.kelluwen.nlp.types.Token");
+    return jcasType.ll_cas.ll_getIntValue(addr, ((Token_Type)jcasType).casFeatCode_rankGap);}
+    
+  /** setter for rankGap - sets rank gap between rank in the text and rank in the language 
+   * @generated
+   * @param v value to set into the feature 
+   */
+  public void setRankGap(int v) {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_rankGap == null)
+      jcasType.jcas.throwFeatMissing("rankGap", "cl.uach.kelluwen.nlp.types.Token");
+    jcasType.ll_cas.ll_setIntValue(addr, ((Token_Type)jcasType).casFeatCode_rankGap, v);}    
   }
 
     

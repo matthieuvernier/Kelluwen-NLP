@@ -18,13 +18,14 @@ import org.apache.uima.resource.ResourceInitializationException;
 import cl.uach.kelluwen.nlp.types.Token;
 
 
-public class InverseTokenFrequency extends JCasAnnotator_ImplBase {
+public class LanguageTokenFrequency extends JCasAnnotator_ImplBase {
 
 
 	/** Parameter for the lexicon path */
 	private final static String PARAM_LEXICON = "Filename";
 	private String theLexiconFile;
-	private HashMap<String,Float> inverseTokenFrequency;
+	private HashMap<String,Float>  languageTokenFrequency;
+	private HashMap<String,Integer> languageTokenRank;
 
 	@Override
 	public void initialize(UimaContext context)
@@ -35,7 +36,8 @@ public class InverseTokenFrequency extends JCasAnnotator_ImplBase {
 
 		//Parse the lexicon file : add each entry/line in the lexicon (an arraylist)
 		Scanner sc;
-		inverseTokenFrequency = new HashMap<String,Float>();
+		languageTokenFrequency = new HashMap<String,Float>();
+		languageTokenRank = new HashMap<String,Integer>();
 		try {
 			sc = new Scanner(new File(theLexiconFile));
 
@@ -43,16 +45,22 @@ public class InverseTokenFrequency extends JCasAnnotator_ImplBase {
 			{
 				String s = sc.nextLine();
 				StringTokenizer stTok = new StringTokenizer(s,";");
-				if (stTok.countTokens()!=2){
+				if (stTok.countTokens()!=4){
 					sc.close();
 					throw new ResourceInitializationException();
 				}
+				Integer rank = new Integer(stTok.nextToken());
 				String token = stTok.nextToken();
+				String pos = stTok.nextToken();
 				Float inverseFrequency = new Float(stTok.nextToken().replace(",", "."));
-				if(inverseTokenFrequency.containsKey(token)){
+				if(languageTokenFrequency.containsKey(token)){
 					//should not happen
 				}
-				else {inverseTokenFrequency.put(token, inverseFrequency);}
+				else {languageTokenFrequency.put(token, inverseFrequency);}
+				if(languageTokenRank.containsKey(token)){
+					//should not happen
+				}
+				else {languageTokenRank.put(token, rank);}
 			}
 			sc.close();
 			 
@@ -70,14 +78,23 @@ public class InverseTokenFrequency extends JCasAnnotator_ImplBase {
 		while (itToken.hasNext()) {
 			Token mTokenAnnotation = (Token) itToken.next();
 			String mToken = mTokenAnnotation.getLemma().toLowerCase();
-			//Test if the current token is in inversefrequency hashmap
-			if (inverseTokenFrequency.containsKey(mToken)){
-				Float inverseFrequency = inverseTokenFrequency.get(mToken);
-				mTokenAnnotation.setInverseTokenFrequency(inverseFrequency);
+			//Test if the current token is in language frequency hashmap
+			if (languageTokenFrequency.containsKey(mToken)){
+				Float inverseFrequency = languageTokenFrequency.get(mToken);
+				mTokenAnnotation.setLanguageTokenFrequency(inverseFrequency);
 			}
 			else {
 				//the token is an hapax
-				mTokenAnnotation.setInverseTokenFrequency(new Float(0.000000001));
+				mTokenAnnotation.setLanguageTokenFrequency(new Float(-1.0));
+			}
+			
+			if (languageTokenRank.containsKey(mToken)){
+				Integer inverseRank = languageTokenRank.get(mToken);
+				mTokenAnnotation.setLanguageTokenRank(inverseRank);
+			}
+			else {
+				//the token is an hapax
+				mTokenAnnotation.setLanguageTokenRank(new Integer(-1));
 			}
 
 		}

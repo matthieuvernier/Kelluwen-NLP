@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** Annotation covering simples tokens (simples words)
- * Updated by JCasGen Fri Nov 06 17:24:47 CLT 2015
+ * Updated by JCasGen Wed Nov 11 10:30:04 CLT 2015
  * @generated */
 public class Token_Type extends Annotation_Type {
   /** @generated 
@@ -121,74 +121,170 @@ public class Token_Type extends Annotation_Type {
   
  
   /** @generated */
-  final Feature casFeat_tokenFrequency;
+  final Feature casFeat_textTokenFrequency;
   /** @generated */
-  final int     casFeatCode_tokenFrequency;
+  final int     casFeatCode_textTokenFrequency;
   /** @generated
    * @param addr low level Feature Structure reference
    * @return the feature value 
    */ 
-  public float getTokenFrequency(int addr) {
-        if (featOkTst && casFeat_tokenFrequency == null)
-      jcas.throwFeatMissing("tokenFrequency", "cl.uach.kelluwen.nlp.types.Token");
-    return ll_cas.ll_getFloatValue(addr, casFeatCode_tokenFrequency);
+  public float getTextTokenFrequency(int addr) {
+        if (featOkTst && casFeat_textTokenFrequency == null)
+      jcas.throwFeatMissing("textTokenFrequency", "cl.uach.kelluwen.nlp.types.Token");
+    return ll_cas.ll_getFloatValue(addr, casFeatCode_textTokenFrequency);
   }
   /** @generated
    * @param addr low level Feature Structure reference
    * @param v value to set 
    */    
-  public void setTokenFrequency(int addr, float v) {
-        if (featOkTst && casFeat_tokenFrequency == null)
-      jcas.throwFeatMissing("tokenFrequency", "cl.uach.kelluwen.nlp.types.Token");
-    ll_cas.ll_setFloatValue(addr, casFeatCode_tokenFrequency, v);}
+  public void setTextTokenFrequency(int addr, float v) {
+        if (featOkTst && casFeat_textTokenFrequency == null)
+      jcas.throwFeatMissing("textTokenFrequency", "cl.uach.kelluwen.nlp.types.Token");
+    ll_cas.ll_setFloatValue(addr, casFeatCode_textTokenFrequency, v);}
     
   
  
   /** @generated */
-  final Feature casFeat_inverseTokenFrequency;
+  final Feature casFeat_languageTokenFrequency;
   /** @generated */
-  final int     casFeatCode_inverseTokenFrequency;
+  final int     casFeatCode_languageTokenFrequency;
   /** @generated
    * @param addr low level Feature Structure reference
    * @return the feature value 
    */ 
-  public float getInverseTokenFrequency(int addr) {
-        if (featOkTst && casFeat_inverseTokenFrequency == null)
-      jcas.throwFeatMissing("inverseTokenFrequency", "cl.uach.kelluwen.nlp.types.Token");
-    return ll_cas.ll_getFloatValue(addr, casFeatCode_inverseTokenFrequency);
+  public float getLanguageTokenFrequency(int addr) {
+        if (featOkTst && casFeat_languageTokenFrequency == null)
+      jcas.throwFeatMissing("languageTokenFrequency", "cl.uach.kelluwen.nlp.types.Token");
+    return ll_cas.ll_getFloatValue(addr, casFeatCode_languageTokenFrequency);
   }
   /** @generated
    * @param addr low level Feature Structure reference
    * @param v value to set 
    */    
-  public void setInverseTokenFrequency(int addr, float v) {
-        if (featOkTst && casFeat_inverseTokenFrequency == null)
-      jcas.throwFeatMissing("inverseTokenFrequency", "cl.uach.kelluwen.nlp.types.Token");
-    ll_cas.ll_setFloatValue(addr, casFeatCode_inverseTokenFrequency, v);}
+  public void setLanguageTokenFrequency(int addr, float v) {
+        if (featOkTst && casFeat_languageTokenFrequency == null)
+      jcas.throwFeatMissing("languageTokenFrequency", "cl.uach.kelluwen.nlp.types.Token");
+    ll_cas.ll_setFloatValue(addr, casFeatCode_languageTokenFrequency, v);}
     
   
  
   /** @generated */
-  final Feature casFeat_TfItf;
+  final Feature casFeat_puntajeRelevancia;
   /** @generated */
-  final int     casFeatCode_TfItf;
+  final int     casFeatCode_puntajeRelevancia;
   /** @generated
    * @param addr low level Feature Structure reference
    * @return the feature value 
    */ 
-  public float getTfItf(int addr) {
-        if (featOkTst && casFeat_TfItf == null)
-      jcas.throwFeatMissing("TfItf", "cl.uach.kelluwen.nlp.types.Token");
-    return ll_cas.ll_getFloatValue(addr, casFeatCode_TfItf);
+  public float getPuntajeRelevancia(int addr) {
+        if (featOkTst && casFeat_puntajeRelevancia == null)
+      jcas.throwFeatMissing("puntajeRelevancia", "cl.uach.kelluwen.nlp.types.Token");
+    return ll_cas.ll_getFloatValue(addr, casFeatCode_puntajeRelevancia);
   }
   /** @generated
    * @param addr low level Feature Structure reference
    * @param v value to set 
    */    
-  public void setTfItf(int addr, float v) {
-        if (featOkTst && casFeat_TfItf == null)
-      jcas.throwFeatMissing("TfItf", "cl.uach.kelluwen.nlp.types.Token");
-    ll_cas.ll_setFloatValue(addr, casFeatCode_TfItf, v);}
+  public void setPuntajeRelevancia(int addr, float v) {
+        if (featOkTst && casFeat_puntajeRelevancia == null)
+      jcas.throwFeatMissing("puntajeRelevancia", "cl.uach.kelluwen.nlp.types.Token");
+    ll_cas.ll_setFloatValue(addr, casFeatCode_puntajeRelevancia, v);}
+    
+  
+ 
+  /** @generated */
+  final Feature casFeat_textTokenRank;
+  /** @generated */
+  final int     casFeatCode_textTokenRank;
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
+  public int getTextTokenRank(int addr) {
+        if (featOkTst && casFeat_textTokenRank == null)
+      jcas.throwFeatMissing("textTokenRank", "cl.uach.kelluwen.nlp.types.Token");
+    return ll_cas.ll_getIntValue(addr, casFeatCode_textTokenRank);
+  }
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
+  public void setTextTokenRank(int addr, int v) {
+        if (featOkTst && casFeat_textTokenRank == null)
+      jcas.throwFeatMissing("textTokenRank", "cl.uach.kelluwen.nlp.types.Token");
+    ll_cas.ll_setIntValue(addr, casFeatCode_textTokenRank, v);}
+    
+  
+ 
+  /** @generated */
+  final Feature casFeat_languageTokenRank;
+  /** @generated */
+  final int     casFeatCode_languageTokenRank;
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
+  public int getLanguageTokenRank(int addr) {
+        if (featOkTst && casFeat_languageTokenRank == null)
+      jcas.throwFeatMissing("languageTokenRank", "cl.uach.kelluwen.nlp.types.Token");
+    return ll_cas.ll_getIntValue(addr, casFeatCode_languageTokenRank);
+  }
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
+  public void setLanguageTokenRank(int addr, int v) {
+        if (featOkTst && casFeat_languageTokenRank == null)
+      jcas.throwFeatMissing("languageTokenRank", "cl.uach.kelluwen.nlp.types.Token");
+    ll_cas.ll_setIntValue(addr, casFeatCode_languageTokenRank, v);}
+    
+  
+ 
+  /** @generated */
+  final Feature casFeat_frequencyGap;
+  /** @generated */
+  final int     casFeatCode_frequencyGap;
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
+  public float getFrequencyGap(int addr) {
+        if (featOkTst && casFeat_frequencyGap == null)
+      jcas.throwFeatMissing("frequencyGap", "cl.uach.kelluwen.nlp.types.Token");
+    return ll_cas.ll_getFloatValue(addr, casFeatCode_frequencyGap);
+  }
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
+  public void setFrequencyGap(int addr, float v) {
+        if (featOkTst && casFeat_frequencyGap == null)
+      jcas.throwFeatMissing("frequencyGap", "cl.uach.kelluwen.nlp.types.Token");
+    ll_cas.ll_setFloatValue(addr, casFeatCode_frequencyGap, v);}
+    
+  
+ 
+  /** @generated */
+  final Feature casFeat_rankGap;
+  /** @generated */
+  final int     casFeatCode_rankGap;
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
+  public int getRankGap(int addr) {
+        if (featOkTst && casFeat_rankGap == null)
+      jcas.throwFeatMissing("rankGap", "cl.uach.kelluwen.nlp.types.Token");
+    return ll_cas.ll_getIntValue(addr, casFeatCode_rankGap);
+  }
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
+  public void setRankGap(int addr, int v) {
+        if (featOkTst && casFeat_rankGap == null)
+      jcas.throwFeatMissing("rankGap", "cl.uach.kelluwen.nlp.types.Token");
+    ll_cas.ll_setIntValue(addr, casFeatCode_rankGap, v);}
     
   
 
@@ -216,16 +312,32 @@ public class Token_Type extends Annotation_Type {
     casFeatCode_posTreeTagger  = (null == casFeat_posTreeTagger) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_posTreeTagger).getCode();
 
  
-    casFeat_tokenFrequency = jcas.getRequiredFeatureDE(casType, "tokenFrequency", "uima.cas.Float", featOkTst);
-    casFeatCode_tokenFrequency  = (null == casFeat_tokenFrequency) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_tokenFrequency).getCode();
+    casFeat_textTokenFrequency = jcas.getRequiredFeatureDE(casType, "textTokenFrequency", "uima.cas.Float", featOkTst);
+    casFeatCode_textTokenFrequency  = (null == casFeat_textTokenFrequency) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_textTokenFrequency).getCode();
 
  
-    casFeat_inverseTokenFrequency = jcas.getRequiredFeatureDE(casType, "inverseTokenFrequency", "uima.cas.Float", featOkTst);
-    casFeatCode_inverseTokenFrequency  = (null == casFeat_inverseTokenFrequency) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_inverseTokenFrequency).getCode();
+    casFeat_languageTokenFrequency = jcas.getRequiredFeatureDE(casType, "languageTokenFrequency", "uima.cas.Float", featOkTst);
+    casFeatCode_languageTokenFrequency  = (null == casFeat_languageTokenFrequency) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_languageTokenFrequency).getCode();
 
  
-    casFeat_TfItf = jcas.getRequiredFeatureDE(casType, "TfItf", "uima.cas.Float", featOkTst);
-    casFeatCode_TfItf  = (null == casFeat_TfItf) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_TfItf).getCode();
+    casFeat_puntajeRelevancia = jcas.getRequiredFeatureDE(casType, "puntajeRelevancia", "uima.cas.Float", featOkTst);
+    casFeatCode_puntajeRelevancia  = (null == casFeat_puntajeRelevancia) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_puntajeRelevancia).getCode();
+
+ 
+    casFeat_textTokenRank = jcas.getRequiredFeatureDE(casType, "textTokenRank", "uima.cas.Integer", featOkTst);
+    casFeatCode_textTokenRank  = (null == casFeat_textTokenRank) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_textTokenRank).getCode();
+
+ 
+    casFeat_languageTokenRank = jcas.getRequiredFeatureDE(casType, "languageTokenRank", "uima.cas.Integer", featOkTst);
+    casFeatCode_languageTokenRank  = (null == casFeat_languageTokenRank) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_languageTokenRank).getCode();
+
+ 
+    casFeat_frequencyGap = jcas.getRequiredFeatureDE(casType, "frequencyGap", "uima.cas.Float", featOkTst);
+    casFeatCode_frequencyGap  = (null == casFeat_frequencyGap) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_frequencyGap).getCode();
+
+ 
+    casFeat_rankGap = jcas.getRequiredFeatureDE(casType, "rankGap", "uima.cas.Integer", featOkTst);
+    casFeatCode_rankGap  = (null == casFeat_rankGap) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_rankGap).getCode();
 
   }
 }
