@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** Annotation covering simples tokens (simples words)
- * Updated by JCasGen Wed Nov 11 10:30:04 CLT 2015
+ * Updated by JCasGen Wed Nov 18 11:35:47 CLT 2015
  * @generated */
 public class Token_Type extends Annotation_Type {
   /** @generated 
@@ -241,50 +241,26 @@ public class Token_Type extends Annotation_Type {
   
  
   /** @generated */
-  final Feature casFeat_frequencyGap;
+  final Feature casFeat_stopWord;
   /** @generated */
-  final int     casFeatCode_frequencyGap;
+  final int     casFeatCode_stopWord;
   /** @generated
    * @param addr low level Feature Structure reference
    * @return the feature value 
    */ 
-  public float getFrequencyGap(int addr) {
-        if (featOkTst && casFeat_frequencyGap == null)
-      jcas.throwFeatMissing("frequencyGap", "cl.uach.kelluwen.nlp.types.Token");
-    return ll_cas.ll_getFloatValue(addr, casFeatCode_frequencyGap);
+  public boolean getStopWord(int addr) {
+        if (featOkTst && casFeat_stopWord == null)
+      jcas.throwFeatMissing("stopWord", "cl.uach.kelluwen.nlp.types.Token");
+    return ll_cas.ll_getBooleanValue(addr, casFeatCode_stopWord);
   }
   /** @generated
    * @param addr low level Feature Structure reference
    * @param v value to set 
    */    
-  public void setFrequencyGap(int addr, float v) {
-        if (featOkTst && casFeat_frequencyGap == null)
-      jcas.throwFeatMissing("frequencyGap", "cl.uach.kelluwen.nlp.types.Token");
-    ll_cas.ll_setFloatValue(addr, casFeatCode_frequencyGap, v);}
-    
-  
- 
-  /** @generated */
-  final Feature casFeat_rankGap;
-  /** @generated */
-  final int     casFeatCode_rankGap;
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @return the feature value 
-   */ 
-  public int getRankGap(int addr) {
-        if (featOkTst && casFeat_rankGap == null)
-      jcas.throwFeatMissing("rankGap", "cl.uach.kelluwen.nlp.types.Token");
-    return ll_cas.ll_getIntValue(addr, casFeatCode_rankGap);
-  }
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @param v value to set 
-   */    
-  public void setRankGap(int addr, int v) {
-        if (featOkTst && casFeat_rankGap == null)
-      jcas.throwFeatMissing("rankGap", "cl.uach.kelluwen.nlp.types.Token");
-    ll_cas.ll_setIntValue(addr, casFeatCode_rankGap, v);}
+  public void setStopWord(int addr, boolean v) {
+        if (featOkTst && casFeat_stopWord == null)
+      jcas.throwFeatMissing("stopWord", "cl.uach.kelluwen.nlp.types.Token");
+    ll_cas.ll_setBooleanValue(addr, casFeatCode_stopWord, v);}
     
   
 
@@ -332,12 +308,8 @@ public class Token_Type extends Annotation_Type {
     casFeatCode_languageTokenRank  = (null == casFeat_languageTokenRank) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_languageTokenRank).getCode();
 
  
-    casFeat_frequencyGap = jcas.getRequiredFeatureDE(casType, "frequencyGap", "uima.cas.Float", featOkTst);
-    casFeatCode_frequencyGap  = (null == casFeat_frequencyGap) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_frequencyGap).getCode();
-
- 
-    casFeat_rankGap = jcas.getRequiredFeatureDE(casType, "rankGap", "uima.cas.Integer", featOkTst);
-    casFeatCode_rankGap  = (null == casFeat_rankGap) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_rankGap).getCode();
+    casFeat_stopWord = jcas.getRequiredFeatureDE(casType, "stopWord", "uima.cas.Boolean", featOkTst);
+    casFeatCode_stopWord  = (null == casFeat_stopWord) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_stopWord).getCode();
 
   }
 }

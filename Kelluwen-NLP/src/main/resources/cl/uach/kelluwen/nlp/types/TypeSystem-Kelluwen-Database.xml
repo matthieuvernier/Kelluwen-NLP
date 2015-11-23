@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <name>TypeSystem-Kelluwen-Database</name>
+    <description>UIMA Annotations types describing datas in the Kelluwen platform</description>
+    <version>1.0</version>
+    <vendor>Universidad Austral de Chile - Kelluwen</vendor>
+  <imports>
+    <import name="cl.uach.kelluwen.nlp.types.TypeSystem-Kelluwen-NLP"/>
+  </imports>
+  <types>
+    <typeDescription>
+      <name>cl.uach.kelluwen.nlp.types.KelluwenMessage</name>
+      <description>a message in the kelluwen platform</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>messageType</name>
+          <description>new message=0
+reply=1</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>idMessage</name>
+          <description>id of this message in the kelluwen platform</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>idSuperMessage</name>
+          <description>Id of the "super" message in the hierarchy if the current message is a reply.
+If the current message is a new message, value = -1.</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>idUser</name>
+          <description>id of the message author</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>name</name>
+          <description>name of the author</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>userType</name>
+          <description>prof=1
+alumno=2
+associate=3</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>idExercicePattern</name>
+          <description>if of the exercice concerned by this message</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>idExperience</name>
+          <description>id of the real experience related to this message</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>year</name>
+          <description>date (year) of this message</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>semester</name>
+          <description>1° semestre or 2 ° semestre</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>numberOfStudents</name>
+          <description>numberOfStudents concerned by this experience</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+      <featureDescription>
+          <name>filtered</name>
+          <description/>
+          <rangeTypeName>uima.cas.Boolean</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

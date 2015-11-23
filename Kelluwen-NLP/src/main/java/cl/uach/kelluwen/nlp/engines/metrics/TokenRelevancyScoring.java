@@ -30,8 +30,9 @@ public class TokenRelevancyScoring extends JCasAnnotator_ImplBase {
 			DecimalFormat df = new DecimalFormat("#.####################");
 			mTokenAnnotation.setPuntajeRelevancia(new Float(df.format(tfitf).replace(",", ".")));
 			
-			mTokenAnnotation.setRankGap(mTokenAnnotation.getTextTokenRank()-mTokenAnnotation.getLanguageTokenRank());
+			/*mTokenAnnotation.setRankGap(mTokenAnnotation.getTextTokenRank()-mTokenAnnotation.getLanguageTokenRank());
 			mTokenAnnotation.setFrequencyGap(mTokenAnnotation.getLanguageTokenFrequency()-mTokenAnnotation.getTextTokenFrequency());
+			*/
 		}
 
 	}

@@ -51,14 +51,36 @@
           <rangeTypeName>uima.cas.Integer</rangeTypeName>
         </featureDescription>
         <featureDescription>
-          <name>frequencyGap</name>
-          <description>Frequency gap between text frequency and language frequency</description>
-          <rangeTypeName>uima.cas.Float</rangeTypeName>
+          <name>stopWord</name>
+          <description/>
+          <rangeTypeName>uima.cas.Boolean</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  <typeDescription>
+      <name>cl.uach.kelluwen.nlp.types.location.City</name>
+      <description>Cities in the world</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>latitude</name>
+          <description>North-South</description>
+          <rangeTypeName>uima.cas.Double</rangeTypeName>
         </featureDescription>
         <featureDescription>
-          <name>rankGap</name>
-          <description>rank gap between rank in the text and rank in the language</description>
-          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+          <name>longitude</name>
+          <description>West-East</description>
+          <rangeTypeName>uima.cas.Double</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>country</name>
+          <description/>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>normalizedName</name>
+          <description/>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
       </features>
     </typeDescription>

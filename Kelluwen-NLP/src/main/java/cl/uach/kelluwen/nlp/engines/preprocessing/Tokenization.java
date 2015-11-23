@@ -11,13 +11,18 @@ import cl.uach.kelluwen.nlp.types.Token;
 
 public class Tokenization extends JCasAnnotator_ImplBase {
 
-	static final String TOKENREGEXP ="([\\wáéíóúüÁÉÍÓÚÜñÑ]{1,})+";
+	static final String TOKENREGEXP ="("
+			+ "([\\wáéíóúüÁÉÍÓÚÜñÑ@]{1,})"
+			+ "("
+			+ "([.\\/():;-|]{0,3})"
+			+ "([\\wáéíóúüÁÉÍÓÚÜñÑ@]{1,})"
+			+ "){0,}"
+			+ ")+";
 	
 	@Override
 	public void process(JCas jcas) throws AnalysisEngineProcessException {
 		//Get document text
 		String docText = jcas.getDocumentText();
-		
 		//Compile the regexp patterns for tokens
 		Pattern patternTokens = Pattern.compile(TOKENREGEXP);
 		

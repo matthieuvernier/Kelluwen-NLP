@@ -11,8 +11,8 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** Annotation covering simples tokens (simples words)
- * Updated by JCasGen Wed Nov 11 10:30:04 CLT 2015
- * XML source: /home/mvernier/git/Kelluwen-NLP/Kelluwen-NLP/src/main/resources/cl/uach/kelluwen/nlp/types/TypeSystem-Kelluwen-NLP.xml
+ * Updated by JCasGen Wed Nov 18 11:35:47 CLT 2015
+ * XML source: /home/mvernier/git/Kelluwen-NLP/Kelluwen-NLP/src/main/resources/cl/uach/kelluwen/nlp/types/TypeSystem-Kelluwen-Database.xml
  * @generated */
 public class Token extends Annotation {
   /** @generated
@@ -251,47 +251,25 @@ public class Token extends Annotation {
    
     
   //*--------------*
-  //* Feature: frequencyGap
+  //* Feature: stopWord
 
-  /** getter for frequencyGap - gets Frequency gap between text frequency and language frequency
+  /** getter for stopWord - gets 
    * @generated
    * @return value of the feature 
    */
-  public float getFrequencyGap() {
-    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_frequencyGap == null)
-      jcasType.jcas.throwFeatMissing("frequencyGap", "cl.uach.kelluwen.nlp.types.Token");
-    return jcasType.ll_cas.ll_getFloatValue(addr, ((Token_Type)jcasType).casFeatCode_frequencyGap);}
+  public boolean getStopWord() {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_stopWord == null)
+      jcasType.jcas.throwFeatMissing("stopWord", "cl.uach.kelluwen.nlp.types.Token");
+    return jcasType.ll_cas.ll_getBooleanValue(addr, ((Token_Type)jcasType).casFeatCode_stopWord);}
     
-  /** setter for frequencyGap - sets Frequency gap between text frequency and language frequency 
+  /** setter for stopWord - sets  
    * @generated
    * @param v value to set into the feature 
    */
-  public void setFrequencyGap(float v) {
-    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_frequencyGap == null)
-      jcasType.jcas.throwFeatMissing("frequencyGap", "cl.uach.kelluwen.nlp.types.Token");
-    jcasType.ll_cas.ll_setFloatValue(addr, ((Token_Type)jcasType).casFeatCode_frequencyGap, v);}    
-   
-    
-  //*--------------*
-  //* Feature: rankGap
-
-  /** getter for rankGap - gets rank gap between rank in the text and rank in the language
-   * @generated
-   * @return value of the feature 
-   */
-  public int getRankGap() {
-    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_rankGap == null)
-      jcasType.jcas.throwFeatMissing("rankGap", "cl.uach.kelluwen.nlp.types.Token");
-    return jcasType.ll_cas.ll_getIntValue(addr, ((Token_Type)jcasType).casFeatCode_rankGap);}
-    
-  /** setter for rankGap - sets rank gap between rank in the text and rank in the language 
-   * @generated
-   * @param v value to set into the feature 
-   */
-  public void setRankGap(int v) {
-    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_rankGap == null)
-      jcasType.jcas.throwFeatMissing("rankGap", "cl.uach.kelluwen.nlp.types.Token");
-    jcasType.ll_cas.ll_setIntValue(addr, ((Token_Type)jcasType).casFeatCode_rankGap, v);}    
+  public void setStopWord(boolean v) {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_stopWord == null)
+      jcasType.jcas.throwFeatMissing("stopWord", "cl.uach.kelluwen.nlp.types.Token");
+    jcasType.ll_cas.ll_setBooleanValue(addr, ((Token_Type)jcasType).casFeatCode_stopWord, v);}    
   }
 
     
