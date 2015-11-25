@@ -24,11 +24,11 @@ public class TokenRelevancyScoring extends JCasAnnotator_ImplBase {
 		FSIterator<Token> itToken      = idxToken.iterator();
 		while (itToken.hasNext()) {
 			Token mTokenAnnotation = (Token) itToken.next();
-			Float tf = mTokenAnnotation.getTextTokenFrequency();
-			Float itf = mTokenAnnotation.getLanguageTokenFrequency();
-			Float tfitf = tf/itf;
+			//Float tf = mTokenAnnotation.getTextTokenFrequency();
+			//Float itf = mTokenAnnotation.getLanguageTokenFrequency();
+			//Float tfitf = tf/itf;
 			DecimalFormat df = new DecimalFormat("#.####################");
-			mTokenAnnotation.setPuntajeRelevancia(new Float(df.format(tfitf).replace(",", ".")));
+			//mTokenAnnotation.setPuntajeRelevancia(new Float(df.format(tfitf).replace(",", ".")));
 			
 			/*mTokenAnnotation.setRankGap(mTokenAnnotation.getTextTokenRank()-mTokenAnnotation.getLanguageTokenRank());
 			mTokenAnnotation.setFrequencyGap(mTokenAnnotation.getLanguageTokenFrequency()-mTokenAnnotation.getTextTokenFrequency());

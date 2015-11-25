@@ -81,20 +81,20 @@ public class LanguageTokenFrequency extends JCasAnnotator_ImplBase {
 			//Test if the current token is in language frequency hashmap
 			if (languageTokenFrequency.containsKey(mToken)){
 				Float inverseFrequency = languageTokenFrequency.get(mToken);
-				mTokenAnnotation.setLanguageTokenFrequency(inverseFrequency);
+				//mTokenAnnotation.setLanguageTokenFrequency(inverseFrequency);
 			}
 			else {
 				//the token is an hapax
-				mTokenAnnotation.setLanguageTokenFrequency(new Float(-1.0));
+				//mTokenAnnotation.setLanguageTokenFrequency(new Float(-1.0));
 			}
 			
 			if (languageTokenRank.containsKey(mToken)){
 				Integer inverseRank = languageTokenRank.get(mToken);
-				mTokenAnnotation.setLanguageTokenRank(inverseRank);
+				//mTokenAnnotation.setLanguageTokenRank(inverseRank);
 			}
 			else {
 				//the token is an hapax
-				mTokenAnnotation.setLanguageTokenRank(new Integer(-1));
+				//mTokenAnnotation.setLanguageTokenRank(new Integer(-1));
 			}
 
 		}

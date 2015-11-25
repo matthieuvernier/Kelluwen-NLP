@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
-  <primitive>true</primitive>  <annotatorImplementationName>cl.uach.kelluwen.nlp.engines.metrics.TokenFrequency</annotatorImplementationName>
+  <primitive>true</primitive>  <annotatorImplementationName>cl.uach.kelluwen.io.elastic.ExportDocument2Elastic</annotatorImplementationName>
   <analysisEngineMetaData>
-    <name>TokenFrequency-AE</name>
-    <description>Annotate the frequency of each tokens in the current document</description>
+    <name>ExportDocument2Elastic</name>
+    <description/>
     <version>1.0</version>
-    <vendor>Universidad Austral de Chile - Kelluwen</vendor>
+    <vendor/>
     <configurationParameters/>
     <configurationParameterSettings/>
     <typeSystemDescription>
       <imports>
-        <import name="cl.uach.kelluwen.nlp.types.TypeSystem-Kelluwen-NLP"/>
+        <import name="cl.uach.kelluwen.nlp.types.TypeSystem-Kelluwen-DataViz"/>
       </imports>
     </typeSystemDescription>
     <typePriorities/>

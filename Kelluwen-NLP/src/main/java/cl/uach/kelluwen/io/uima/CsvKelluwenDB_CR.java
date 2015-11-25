@@ -1,4 +1,4 @@
-package cl.uach.kelluwen.nlp.collectionreaders.adhoc;
+package cl.uach.kelluwen.io.uima;
 
 import java.io.File;
 import java.io.IOException;

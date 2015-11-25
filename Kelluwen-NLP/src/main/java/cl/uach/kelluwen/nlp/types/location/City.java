@@ -11,8 +11,8 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** Cities in the world
- * Updated by JCasGen Wed Nov 18 11:35:47 CLT 2015
- * XML source: /home/mvernier/git/Kelluwen-NLP/Kelluwen-NLP/src/main/resources/cl/uach/kelluwen/nlp/types/TypeSystem-Kelluwen-Database.xml
+ * Updated by JCasGen Wed Nov 25 15:14:47 CLT 2015
+ * XML source: /home/mvernier/git/Kelluwen-NLP/Kelluwen-NLP/src/main/resources/cl/uach/kelluwen/nlp/types/TypeSystem-Kelluwen-NLP.xml
  * @generated */
 public class City extends Annotation {
   /** @generated

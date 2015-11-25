@@ -22,14 +22,13 @@ public class CityFinder extends JCasAnnotator_ImplBase {
 
 	private MongoClient mongoClient;
 	private MongoDatabase database;
-	private MongoCollection<Document> collectionCities;
 	private MongoCollection<Document> collectionCountries;
 	
 	@Override
 	public void initialize(UimaContext context)
 			throws ResourceInitializationException {
 		super.initialize(context);
-		mongoClient = new MongoClient( "localhost" , 27017 );
+		mongoClient = new MongoClient("localhost" , 27017);
 		database = mongoClient.getDatabase("geolocation");
 		//collectionCities = database.getCollection("cities");
 		collectionCountries = database.getCollection("countries");
@@ -64,9 +63,6 @@ public class CityFinder extends JCasAnnotator_ImplBase {
 
 	}
 	
-	/**
-	 * In this method we generate the Arff from the different instances
-	 */
 	@Override
 	public void collectionProcessComplete()
 			throws AnalysisEngineProcessException {

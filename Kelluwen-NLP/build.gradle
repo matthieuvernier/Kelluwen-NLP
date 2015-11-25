@@ -15,8 +15,12 @@ repositories {
 }
 
 dependencies {
+	compile 'com.googlecode.json-simple:json-simple:1.1.1'
+	compile 'net.java.dev.jna:jna:4.2.1'
+	compile 'org.elasticsearch:elasticsearch:2.0.0'
+	compile 'org.jsoup:jsoup:1.8.3'
+	compile 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
 	compile 'org.mongodb:mongo-java-driver:3.0.4'
-	compile 'org.apache.uima:uimaj-examples:2.8.1'
 	compile 'org.apache.uima:uimaj-core:2.8.1'
 	compile "org.apache.uima:uimaj-cpe:2.4.0"
 	compile "org.apache.uima:uimaj-document-annotation:2.4.0"

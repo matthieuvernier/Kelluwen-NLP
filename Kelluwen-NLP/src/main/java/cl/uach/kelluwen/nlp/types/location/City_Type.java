@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** Cities in the world
- * Updated by JCasGen Wed Nov 18 11:35:47 CLT 2015
+ * Updated by JCasGen Wed Nov 25 15:14:47 CLT 2015
  * @generated */
 public class City_Type extends Annotation_Type {
   /** @generated 

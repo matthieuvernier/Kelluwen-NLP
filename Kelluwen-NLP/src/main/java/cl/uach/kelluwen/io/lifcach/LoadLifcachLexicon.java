@@ -1,4 +1,4 @@
-package cl.uach.kelluwen.nlp.scripts.loadresources;
+package cl.uach.kelluwen.io.lifcach;
 
 import java.io.BufferedWriter;
 import java.io.File;

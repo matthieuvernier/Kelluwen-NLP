@@ -26,34 +26,14 @@
           <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
       <featureDescription>
-          <name>textTokenFrequency</name>
-          <description>give the frequency of this token in the current text</description>
-          <rangeTypeName>uima.cas.Float</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>languageTokenFrequency</name>
-          <description>gives the frequency of this token in the language</description>
-          <rangeTypeName>uima.cas.Float</rangeTypeName>
-        </featureDescription>
-      <featureDescription>
-          <name>puntajeRelevancia</name>
-          <description>TF * ITF score</description>
-          <rangeTypeName>uima.cas.Float</rangeTypeName>
-        </featureDescription>
-      <featureDescription>
-          <name>textTokenRank</name>
-          <description>Rank of this token in the text according to it frequency</description>
-          <rangeTypeName>uima.cas.Integer</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>languageTokenRank</name>
-          <description>Rank of this token according to it frequency in the language</description>
-          <rangeTypeName>uima.cas.Integer</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
           <name>stopWord</name>
           <description/>
           <rangeTypeName>uima.cas.Boolean</rangeTypeName>
+        </featureDescription>
+      <featureDescription>
+          <name>textMetric</name>
+          <description/>
+          <rangeTypeName>cl.uach.kelluwen.nlp.types.TextMetric</rangeTypeName>
         </featureDescription>
       </features>
     </typeDescription>
@@ -81,6 +61,43 @@
           <name>normalizedName</name>
           <description/>
           <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  <typeDescription>
+      <name>cl.uach.kelluwen.nlp.types.TextMetric</name>
+      <description>metrics for text analysis : frecuency, language frecuency, rank, etc.</description>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>frequencyInText</name>
+          <description/>
+          <rangeTypeName>uima.cas.Float</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>frequencyInLanguage</name>
+          <description/>
+          <rangeTypeName>uima.cas.Float</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>rankInText</name>
+          <description/>
+          <rangeTypeName>uima.cas.Float</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>rankInLanguage</name>
+          <description/>
+          <rangeTypeName>uima.cas.Float</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>TFIDF</name>
+          <description/>
+          <rangeTypeName>uima.cas.Float</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>annotation</name>
+          <description/>
+          <rangeTypeName>uima.tcas.Annotation</rangeTypeName>
         </featureDescription>
       </features>
     </typeDescription>

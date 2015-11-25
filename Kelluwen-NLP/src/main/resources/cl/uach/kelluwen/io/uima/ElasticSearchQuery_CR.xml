@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<collectionReaderDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <implementationName>cl.uach.kelluwen.io.uima.ElasticSearchQuery_CR</implementationName>
+  <processingResourceMetaData>
+    <name>ElasticSearchQuery_CR</name>
+    <description/>
+    <version>1.0</version>
+    <vendor/>
+    <configurationParameters>
+      <configurationParameter>
+        <name>fromDate</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>toDate</name>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>fromDate</name>
+        <value>
+          <string>2015-10-02 18:00:00</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>toDate</name>
+        <value>
+          <string>2015-10-02 18:05:00</string>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
+    <typeSystemDescription>
+      <imports>
+        <import name="cl.uach.kelluwen.nlp.types.TypeSystem-Kelluwen-DataViz"/>
+      </imports>
+    </typeSystemDescription>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs/>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+  <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>false</multipleDeploymentAllowed>
+      <outputsNewCASes>true</outputsNewCASes>
+    </operationalProperties>
+  </processingResourceMetaData>
+  <resourceManagerConfiguration/>
+</collectionReaderDescription>
