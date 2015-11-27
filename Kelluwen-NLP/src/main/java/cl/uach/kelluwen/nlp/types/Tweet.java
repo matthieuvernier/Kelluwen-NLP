@@ -11,7 +11,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Mon Nov 23 16:07:40 CLT 2015
+ * Updated by JCasGen Thu Nov 26 18:37:18 CLT 2015
  * XML source: /home/mvernier/git/Kelluwen-NLP/Kelluwen-NLP/src/main/resources/cl/uach/kelluwen/nlp/types/TypeSystem-Kelluwen-DataViz.xml
  * @generated */
 public class Tweet extends Annotation {

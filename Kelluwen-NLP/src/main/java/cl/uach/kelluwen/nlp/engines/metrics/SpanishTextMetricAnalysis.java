@@ -56,7 +56,7 @@ public class SpanishTextMetricAnalysis extends JCasAnnotator_ImplBase {
 	
 	@Override
 	public void process(JCas jcas) throws AnalysisEngineProcessException {
-		System.out.println("process metrics");
+		//System.out.println("process metrics");
 		/** TOKEN FREQUENCY IN TEXT */
 		
 		// HashMap used to count token frequencies in the jcas
@@ -81,7 +81,7 @@ public class SpanishTextMetricAnalysis extends JCasAnnotator_ImplBase {
 		
 		//second step sort the hashmap according to the value of each entry
 
-		System.out.println("step2");
+		//System.out.println("step2");
 		HashMap<String,Integer> tokenFrequencyMapSorted = triAvecValeur(tokenFrequencyMap);
 		HashMap<String,Integer> tokensRank = new HashMap<String,Integer>();
 		Iterator<Entry<String, Integer>> itTokenSorted= tokenFrequencyMapSorted.entrySet().iterator();
@@ -114,7 +114,7 @@ public class SpanishTextMetricAnalysis extends JCasAnnotator_ImplBase {
 		idxToken = jcas.getAnnotationIndex(Token.type);
 		itToken      = idxToken.iterator();
 		while (itToken.hasNext()) {
-			System.out.println("token");
+			//System.out.println("token");
 			Token mTokenAnnotation = (Token) itToken.next();
 			String mToken = mTokenAnnotation.getLemma().toLowerCase();
 			Integer tokenFrequency = tokenFrequencyMap.get(mToken);
@@ -152,7 +152,7 @@ public class SpanishTextMetricAnalysis extends JCasAnnotator_ImplBase {
 				Float tfidf = new Float(df.format(result/tokenFrequencyInLanguage).replace(",", "."));
 				metricAnnotation.setTFIDF(new Float(df.format(result/tokenFrequencyInLanguage).replace(",", ".")));
 				
-			System.out.println(mTokenAnnotation.getLemma()+":"+tfidf);
+		//	System.out.println(mTokenAnnotation.getLemma()+":"+tfidf);
 			}
 			else {metricAnnotation.setTFIDF(new Float(0.0));};
 		}		

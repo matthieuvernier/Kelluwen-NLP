@@ -1,6 +1,6 @@
 
 
-/* First created by JCasGen Thu Nov 12 12:40:58 CLT 2015 */
+/* First created by JCasGen Thu Nov 26 18:37:15 CLT 2015 */
 package cl.uach.kelluwen.nlp.types.location;
 
 import org.apache.uima.jcas.JCas; 
@@ -14,12 +14,12 @@ import org.apache.uima.jcas.tcas.Annotation;
  * Updated by JCasGen Thu Nov 26 18:37:18 CLT 2015
  * XML source: /home/mvernier/git/Kelluwen-NLP/Kelluwen-NLP/src/main/resources/cl/uach/kelluwen/nlp/types/TypeSystem-Kelluwen-DataViz.xml
  * @generated */
-public class City extends Annotation {
+public class Region extends Annotation {
   /** @generated
    * @ordered 
    */
   @SuppressWarnings ("hiding")
-  public final static int typeIndexID = JCasRegistry.register(City.class);
+  public final static int typeIndexID = JCasRegistry.register(Region.class);
   /** @generated
    * @ordered 
    */
@@ -33,14 +33,14 @@ public class City extends Annotation {
  
   /** Never called.  Disable default constructor
    * @generated */
-  protected City() {/* intentionally empty block */}
+  protected Region() {/* intentionally empty block */}
     
   /** Internal - constructor used by generator 
    * @generated
    * @param addr low level Feature Structure reference
    * @param type the type of this Feature Structure 
    */
-  public City(int addr, TOP_Type type) {
+  public Region(int addr, TOP_Type type) {
     super(addr, type);
     readObject();
   }
@@ -48,7 +48,7 @@ public class City extends Annotation {
   /** @generated
    * @param jcas JCas to which this Feature Structure belongs 
    */
-  public City(JCas jcas) {
+  public Region(JCas jcas) {
     super(jcas);
     readObject();   
   } 
@@ -58,7 +58,7 @@ public class City extends Annotation {
    * @param begin offset to the begin spot in the SofA
    * @param end offset to the end spot in the SofA 
   */  
-  public City(JCas jcas, int begin, int end) {
+  public Region(JCas jcas, int begin, int end) {
     super(jcas);
     setBegin(begin);
     setEnd(end);
@@ -84,18 +84,18 @@ public class City extends Annotation {
    * @return value of the feature 
    */
   public double getLatitude() {
-    if (City_Type.featOkTst && ((City_Type)jcasType).casFeat_latitude == null)
-      jcasType.jcas.throwFeatMissing("latitude", "cl.uach.kelluwen.nlp.types.location.City");
-    return jcasType.ll_cas.ll_getDoubleValue(addr, ((City_Type)jcasType).casFeatCode_latitude);}
+    if (Region_Type.featOkTst && ((Region_Type)jcasType).casFeat_latitude == null)
+      jcasType.jcas.throwFeatMissing("latitude", "cl.uach.kelluwen.nlp.types.location.Region");
+    return jcasType.ll_cas.ll_getDoubleValue(addr, ((Region_Type)jcasType).casFeatCode_latitude);}
     
   /** setter for latitude - sets  
    * @generated
    * @param v value to set into the feature 
    */
   public void setLatitude(double v) {
-    if (City_Type.featOkTst && ((City_Type)jcasType).casFeat_latitude == null)
-      jcasType.jcas.throwFeatMissing("latitude", "cl.uach.kelluwen.nlp.types.location.City");
-    jcasType.ll_cas.ll_setDoubleValue(addr, ((City_Type)jcasType).casFeatCode_latitude, v);}    
+    if (Region_Type.featOkTst && ((Region_Type)jcasType).casFeat_latitude == null)
+      jcasType.jcas.throwFeatMissing("latitude", "cl.uach.kelluwen.nlp.types.location.Region");
+    jcasType.ll_cas.ll_setDoubleValue(addr, ((Region_Type)jcasType).casFeatCode_latitude, v);}    
    
     
   //*--------------*
@@ -106,18 +106,18 @@ public class City extends Annotation {
    * @return value of the feature 
    */
   public double getLongitude() {
-    if (City_Type.featOkTst && ((City_Type)jcasType).casFeat_longitude == null)
-      jcasType.jcas.throwFeatMissing("longitude", "cl.uach.kelluwen.nlp.types.location.City");
-    return jcasType.ll_cas.ll_getDoubleValue(addr, ((City_Type)jcasType).casFeatCode_longitude);}
+    if (Region_Type.featOkTst && ((Region_Type)jcasType).casFeat_longitude == null)
+      jcasType.jcas.throwFeatMissing("longitude", "cl.uach.kelluwen.nlp.types.location.Region");
+    return jcasType.ll_cas.ll_getDoubleValue(addr, ((Region_Type)jcasType).casFeatCode_longitude);}
     
   /** setter for longitude - sets  
    * @generated
    * @param v value to set into the feature 
    */
   public void setLongitude(double v) {
-    if (City_Type.featOkTst && ((City_Type)jcasType).casFeat_longitude == null)
-      jcasType.jcas.throwFeatMissing("longitude", "cl.uach.kelluwen.nlp.types.location.City");
-    jcasType.ll_cas.ll_setDoubleValue(addr, ((City_Type)jcasType).casFeatCode_longitude, v);}    
+    if (Region_Type.featOkTst && ((Region_Type)jcasType).casFeat_longitude == null)
+      jcasType.jcas.throwFeatMissing("longitude", "cl.uach.kelluwen.nlp.types.location.Region");
+    jcasType.ll_cas.ll_setDoubleValue(addr, ((Region_Type)jcasType).casFeatCode_longitude, v);}    
    
     
   //*--------------*
@@ -128,18 +128,18 @@ public class City extends Annotation {
    * @return value of the feature 
    */
   public String getNormalizedName() {
-    if (City_Type.featOkTst && ((City_Type)jcasType).casFeat_normalizedName == null)
-      jcasType.jcas.throwFeatMissing("normalizedName", "cl.uach.kelluwen.nlp.types.location.City");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((City_Type)jcasType).casFeatCode_normalizedName);}
+    if (Region_Type.featOkTst && ((Region_Type)jcasType).casFeat_normalizedName == null)
+      jcasType.jcas.throwFeatMissing("normalizedName", "cl.uach.kelluwen.nlp.types.location.Region");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Region_Type)jcasType).casFeatCode_normalizedName);}
     
   /** setter for normalizedName - sets  
    * @generated
    * @param v value to set into the feature 
    */
   public void setNormalizedName(String v) {
-    if (City_Type.featOkTst && ((City_Type)jcasType).casFeat_normalizedName == null)
-      jcasType.jcas.throwFeatMissing("normalizedName", "cl.uach.kelluwen.nlp.types.location.City");
-    jcasType.ll_cas.ll_setStringValue(addr, ((City_Type)jcasType).casFeatCode_normalizedName, v);}    
+    if (Region_Type.featOkTst && ((Region_Type)jcasType).casFeat_normalizedName == null)
+      jcasType.jcas.throwFeatMissing("normalizedName", "cl.uach.kelluwen.nlp.types.location.Region");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Region_Type)jcasType).casFeatCode_normalizedName, v);}    
    
     
   //*--------------*
@@ -150,18 +150,18 @@ public class City extends Annotation {
    * @return value of the feature 
    */
   public String getNormalizedCountryName() {
-    if (City_Type.featOkTst && ((City_Type)jcasType).casFeat_normalizedCountryName == null)
-      jcasType.jcas.throwFeatMissing("normalizedCountryName", "cl.uach.kelluwen.nlp.types.location.City");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((City_Type)jcasType).casFeatCode_normalizedCountryName);}
+    if (Region_Type.featOkTst && ((Region_Type)jcasType).casFeat_normalizedCountryName == null)
+      jcasType.jcas.throwFeatMissing("normalizedCountryName", "cl.uach.kelluwen.nlp.types.location.Region");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Region_Type)jcasType).casFeatCode_normalizedCountryName);}
     
   /** setter for normalizedCountryName - sets  
    * @generated
    * @param v value to set into the feature 
    */
   public void setNormalizedCountryName(String v) {
-    if (City_Type.featOkTst && ((City_Type)jcasType).casFeat_normalizedCountryName == null)
-      jcasType.jcas.throwFeatMissing("normalizedCountryName", "cl.uach.kelluwen.nlp.types.location.City");
-    jcasType.ll_cas.ll_setStringValue(addr, ((City_Type)jcasType).casFeatCode_normalizedCountryName, v);}    
+    if (Region_Type.featOkTst && ((Region_Type)jcasType).casFeat_normalizedCountryName == null)
+      jcasType.jcas.throwFeatMissing("normalizedCountryName", "cl.uach.kelluwen.nlp.types.location.Region");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Region_Type)jcasType).casFeatCode_normalizedCountryName, v);}    
   }
 
     

@@ -38,33 +38,6 @@
       </features>
     </typeDescription>
   <typeDescription>
-      <name>cl.uach.kelluwen.nlp.types.location.City</name>
-      <description>Cities in the world</description>
-      <supertypeName>uima.tcas.Annotation</supertypeName>
-      <features>
-        <featureDescription>
-          <name>latitude</name>
-          <description>North-South</description>
-          <rangeTypeName>uima.cas.Double</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>longitude</name>
-          <description>West-East</description>
-          <rangeTypeName>uima.cas.Double</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>country</name>
-          <description/>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-        <featureDescription>
-          <name>normalizedName</name>
-          <description/>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-      </features>
-    </typeDescription>
-  <typeDescription>
       <name>cl.uach.kelluwen.nlp.types.TextMetric</name>
       <description>metrics for text analysis : frecuency, language frecuency, rank, etc.</description>
       <supertypeName>uima.tcas.Annotation</supertypeName>
@@ -101,5 +74,5 @@
         </featureDescription>
       </features>
     </typeDescription>
-  </types>
+		</types>
 </typeSystemDescription>

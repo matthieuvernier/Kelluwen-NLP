@@ -31,7 +31,7 @@ public class LoadGeonamesFile {
 		//	String codeCountry=elements[8];
 
 			// Region = ADM1, Departement = ADM2 , Country = PCLI, city=PPL
-			if (featureclass.equals("A")){
+			if (featureclass.equals("R")){
 				out.write(s+"\n");
 			}
 		}

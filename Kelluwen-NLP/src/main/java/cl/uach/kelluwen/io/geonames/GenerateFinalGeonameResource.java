@@ -51,7 +51,9 @@ public class GenerateFinalGeonameResource {
 		BufferedWriter out
 		= new BufferedWriter(new FileWriter(args[3]));
 		
-		out.write("geonameID,name,ascii_name,spanish_name,latitude,longitude,featureclass,featurecode,codeCountry,countryName\n");
+		out.write("geonameid,name,asciiname,spanishname,latitude,longitude,"
+				+ "feature_class,feature_code,country_code,country_name,cc2,admin1_code,admin2_code,"
+				+ "admin3_code, admin4_code, population,elevation,dem,timezone\n");
 		
 		Scanner sc2 = new Scanner(new File(args[2]));
 		while (sc2.hasNextLine())
@@ -59,28 +61,40 @@ public class GenerateFinalGeonameResource {
 			String s = sc2.nextLine();
 			String[] elements = s.split("\t");
 
-			String geonameID = elements[0];
-			String offname = elements[1];
-			String ascii_name = elements[2];
-			String alternateNames = elements[3];
+			String geonameid = elements[0];
+			String name = elements[1];
+			String asciiname = elements[2];
+			String spanishname = elements[3];
 			String latitude = elements[4];
 			String longitude = elements[5];
-			String featureclass=elements[6];
-			String featurecode=elements[7];
-			String codeCountry=elements[8];
-
-			if (alternativesES.containsKey(geonameID)){
-				alternateNames=alternativesES.get(geonameID);
-				System.out.println("alternative: "+ascii_name+"----"+alternativesES.get(geonameID));
+			String feature_class=elements[6];
+			String feature_code=elements[7];
+			String country_code=elements[8];
+			String cc2=elements[9];
+			String admin1_code=elements[10];
+			String admin2_code=elements[11];
+			String admin3_code=elements[12];
+			String admin4_code=elements[13];
+			String population=elements[14];
+			String elevation=elements[15];
+			String dem=elements[16];
+			String timezone=elements[17];
+			
+			if (alternativesES.containsKey(geonameid)){
+				spanishname=alternativesES.get(geonameid);
+				//System.out.println("alternative: "+ascii_name+"----"+alternativesES.get(geonameID));
 			}
 			else {
-				alternateNames = ascii_name;
+				spanishname = asciiname;
 			}
 			
-			String countryName = codeCountryMap.get(codeCountry);
+			String country_name = codeCountryMap.get(country_code);
 			
 		
-			out.write(geonameID+","+offname+","+ascii_name+","+alternateNames+","+latitude+","+longitude+","+featureclass+","+featurecode+","+codeCountry+","+countryName+"\n");
+			out.write(geonameid+","+name+","+asciiname+","+spanishname+","+latitude+","+longitude+","
+			+feature_class+","+feature_code+","+country_code+","+country_name+","
+			+cc2+","+admin1_code+","+admin2_code+","+admin3_code+","+admin4_code
+			+","+population+","+elevation+","+dem+","+timezone+"\n");
 		
 		}
 		sc2.close();

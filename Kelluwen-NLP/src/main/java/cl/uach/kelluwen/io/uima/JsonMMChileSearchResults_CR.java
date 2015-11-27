@@ -140,6 +140,10 @@ public class JsonMMChileSearchResults_CR extends CollectionReader_ImplBase {
 
 			nb_download_fails=nb_download_fails+1;
 		}
+		catch (org.jsoup.UnsupportedMimeTypeException e){
+			System.out.println(e);
+			nb_download_fails=nb_download_fails+1;
+		}
 
 
 		jcas.setDocumentText(documentText2);

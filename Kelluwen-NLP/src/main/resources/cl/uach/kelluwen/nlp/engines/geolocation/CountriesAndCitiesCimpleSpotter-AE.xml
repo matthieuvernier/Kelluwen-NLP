@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
-  <primitive>true</primitive>  <annotatorImplementationName>cl.uach.kelluwen.nlp.engines.geolocation.CityFinder</annotatorImplementationName>
+  <primitive>true</primitive>  <annotatorImplementationName>cl.uach.kelluwen.nlp.engines.geolocation.CountriesAndCitiesSimpleSpotter</annotatorImplementationName>
   <analysisEngineMetaData>
-    <name>CityFinder-AE</name>
-    <description>Annotate the cities with Geonames resources.</description>
+    <name>CountriesAndCitiesCimpleSpotter-AE</name>
+    <description/>
     <version>1.0</version>
-    <vendor>Universidad Austral de Chile - Kelluwen</vendor>
-    <configurationParameters>
-      </configurationParameters>
-    <configurationParameterSettings>
-      </configurationParameterSettings>
+    <vendor/>
+    <configurationParameters/>
+    <configurationParameterSettings/>
     <typeSystemDescription>
       <imports>
-        <import name="cl.uach.kelluwen.nlp.types.TypeSystem-Kelluwen-NLP"/>
+        <import name="cl.uach.kelluwen.nlp.types.TypeSystem-Kelluwen-DataViz"/>
       </imports>
     </typeSystemDescription>
     <typePriorities/>

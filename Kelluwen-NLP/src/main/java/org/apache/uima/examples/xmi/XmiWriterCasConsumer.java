@@ -114,7 +114,7 @@ public class XmiWriterCasConsumer extends CasConsumer_ImplBase {
     } catch (IOException e) {
       throw new ResourceProcessException(e);
     } catch (SAXException e) {
-      throw new ResourceProcessException(e);
+      System.out.println(e);
     }
   }
 

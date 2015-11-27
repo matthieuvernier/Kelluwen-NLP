@@ -6,7 +6,7 @@
     <name>ElasticSearchQuery_CR</name>
     <description/>
     <version>1.0</version>
-    <vendor/>
+    <vendor>Universidad Austral de Chile - Kelluwen</vendor>
     <configurationParameters>
       <configurationParameter>
         <name>fromDate</name>

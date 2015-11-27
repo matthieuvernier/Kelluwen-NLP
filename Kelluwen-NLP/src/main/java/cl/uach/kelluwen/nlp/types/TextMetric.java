@@ -11,7 +11,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** metrics for text analysis : frecuency, language frecuency, rank, etc.
- * Updated by JCasGen Wed Nov 25 15:14:48 CLT 2015
+ * Updated by JCasGen Fri Nov 27 14:12:08 CLT 2015
  * XML source: /home/mvernier/git/Kelluwen-NLP/Kelluwen-NLP/src/main/resources/cl/uach/kelluwen/nlp/types/TypeSystem-Kelluwen-NLP.xml
  * @generated */
 public class TextMetric extends Annotation {

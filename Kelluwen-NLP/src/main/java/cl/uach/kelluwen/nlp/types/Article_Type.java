@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Mon Nov 23 16:07:40 CLT 2015
+ * Updated by JCasGen Thu Nov 26 18:37:18 CLT 2015
  * @generated */
 public class Article_Type extends Annotation_Type {
   /** @generated 
