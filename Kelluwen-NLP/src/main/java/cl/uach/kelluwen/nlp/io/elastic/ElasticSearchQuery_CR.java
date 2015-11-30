@@ -1,4 +1,4 @@
-package cl.uach.kelluwen.io.uima;
+package cl.uach.kelluwen.nlp.io.elastic;
 
 import static org.elasticsearch.node.NodeBuilder.nodeBuilder;
 

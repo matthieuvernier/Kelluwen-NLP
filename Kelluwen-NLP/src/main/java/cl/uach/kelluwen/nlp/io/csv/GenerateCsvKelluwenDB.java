@@ -1,4 +1,4 @@
-package cl.uach.kelluwen.io.csv;
+package cl.uach.kelluwen.nlp.io.csv;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -67,8 +67,8 @@ public class GenerateCsvKelluwenDB extends JCasAnnotator_ImplBase {
 				if (!mToken.getStopWord()&&mToken.getLemma().length()>1&&mToken.getLemma().length()<=20){
 					String lemma = mToken.getLemma();
 
-					if (lemma.startsWith("http://")){
-						if (lemma.contains("youtube")){
+					if (mToken.getCoveredText().startsWith("http://")){
+						if (mToken.getCoveredText().contains("youtube")){
 							lemma="youtube";
 						}
 						else lemma="http";

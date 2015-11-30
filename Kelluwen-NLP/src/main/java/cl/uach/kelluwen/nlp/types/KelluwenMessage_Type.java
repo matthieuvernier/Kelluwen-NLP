@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** a message in the kelluwen platform
- * Updated by JCasGen Wed Nov 18 11:35:47 CLT 2015
+ * Updated by JCasGen Sun Nov 29 19:05:34 CLT 2015
  * @generated */
 public class KelluwenMessage_Type extends Annotation_Type {
   /** @generated 
@@ -333,6 +333,30 @@ public class KelluwenMessage_Type extends Annotation_Type {
     ll_cas.ll_setBooleanValue(addr, casFeatCode_filtered, v);}
     
   
+ 
+  /** @generated */
+  final Feature casFeat_topic;
+  /** @generated */
+  final int     casFeatCode_topic;
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @return the feature value 
+   */ 
+  public String getTopic(int addr) {
+        if (featOkTst && casFeat_topic == null)
+      jcas.throwFeatMissing("topic", "cl.uach.kelluwen.nlp.types.KelluwenMessage");
+    return ll_cas.ll_getStringValue(addr, casFeatCode_topic);
+  }
+  /** @generated
+   * @param addr low level Feature Structure reference
+   * @param v value to set 
+   */    
+  public void setTopic(int addr, String v) {
+        if (featOkTst && casFeat_topic == null)
+      jcas.throwFeatMissing("topic", "cl.uach.kelluwen.nlp.types.KelluwenMessage");
+    ll_cas.ll_setStringValue(addr, casFeatCode_topic, v);}
+    
+  
 
 
 
@@ -392,6 +416,10 @@ public class KelluwenMessage_Type extends Annotation_Type {
  
     casFeat_filtered = jcas.getRequiredFeatureDE(casType, "filtered", "uima.cas.Boolean", featOkTst);
     casFeatCode_filtered  = (null == casFeat_filtered) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_filtered).getCode();
+
+ 
+    casFeat_topic = jcas.getRequiredFeatureDE(casType, "topic", "uima.cas.String", featOkTst);
+    casFeatCode_topic  = (null == casFeat_topic) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_topic).getCode();
 
   }
 }

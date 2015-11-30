@@ -1,4 +1,4 @@
-package cl.uach.kelluwen.io.geonames;
+package cl.uach.kelluwen.nlp.io.csv.geonames;
 
 import java.io.BufferedWriter;
 import java.io.File;

@@ -11,8 +11,8 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** a message in the kelluwen platform
- * Updated by JCasGen Wed Nov 18 11:35:47 CLT 2015
- * XML source: /home/mvernier/git/Kelluwen-NLP/Kelluwen-NLP/src/main/resources/cl/uach/kelluwen/nlp/types/TypeSystem-Kelluwen-Database.xml
+ * Updated by JCasGen Sun Nov 29 19:05:33 CLT 2015
+ * XML source: /home/matthieu/git/Kelluwen-NLP/Kelluwen-NLP/src/main/resources/cl/uach/kelluwen/nlp/types/TypeSystem-Kelluwen-Database.xml
  * @generated */
 public class KelluwenMessage extends Annotation {
   /** @generated
@@ -346,6 +346,28 @@ associate=3
     if (KelluwenMessage_Type.featOkTst && ((KelluwenMessage_Type)jcasType).casFeat_filtered == null)
       jcasType.jcas.throwFeatMissing("filtered", "cl.uach.kelluwen.nlp.types.KelluwenMessage");
     jcasType.ll_cas.ll_setBooleanValue(addr, ((KelluwenMessage_Type)jcasType).casFeatCode_filtered, v);}    
+   
+    
+  //*--------------*
+  //* Feature: topic
+
+  /** getter for topic - gets 
+   * @generated
+   * @return value of the feature 
+   */
+  public String getTopic() {
+    if (KelluwenMessage_Type.featOkTst && ((KelluwenMessage_Type)jcasType).casFeat_topic == null)
+      jcasType.jcas.throwFeatMissing("topic", "cl.uach.kelluwen.nlp.types.KelluwenMessage");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((KelluwenMessage_Type)jcasType).casFeatCode_topic);}
+    
+  /** setter for topic - sets  
+   * @generated
+   * @param v value to set into the feature 
+   */
+  public void setTopic(String v) {
+    if (KelluwenMessage_Type.featOkTst && ((KelluwenMessage_Type)jcasType).casFeat_topic == null)
+      jcasType.jcas.throwFeatMissing("topic", "cl.uach.kelluwen.nlp.types.KelluwenMessage");
+    jcasType.ll_cas.ll_setStringValue(addr, ((KelluwenMessage_Type)jcasType).casFeatCode_topic, v);}    
   }
 
     

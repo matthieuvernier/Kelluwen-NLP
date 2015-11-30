@@ -1,4 +1,4 @@
-package cl.uach.kelluwen.io.elastic;
+package cl.uach.kelluwen.nlp.io.elastic;
 
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
