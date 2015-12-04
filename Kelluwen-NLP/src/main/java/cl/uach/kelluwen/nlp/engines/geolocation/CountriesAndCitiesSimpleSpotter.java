@@ -51,7 +51,7 @@ public class CountriesAndCitiesSimpleSpotter extends JCasAnnotator_ImplBase {
 				try {
 					Double latitude = new Double(geoClueAnnotation.getLatitude());
 					Double longitude = new Double(geoClueAnnotation.getLongitude());
-					countryCodeList.add(geoClueAnnotation.getCountry_code());
+					//countryCodeList.add(geoClueAnnotation.getCountry_code());
 					regionAnnotation.setLatitude(latitude);
 					regionAnnotation.setLongitude(longitude);
 					regionAnnotation.setNormalizedCountryName(geoClueAnnotation.getCountry_code());

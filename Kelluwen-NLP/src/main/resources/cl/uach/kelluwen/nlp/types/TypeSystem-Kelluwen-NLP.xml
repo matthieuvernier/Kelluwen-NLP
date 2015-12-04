@@ -74,5 +74,17 @@
         </featureDescription>
       </features>
     </typeDescription>
-		</types>
+		<typeDescription>
+      <name>cl.uach.kelluwen.nlp.types.Topic</name>
+      <description/>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>category</name>
+          <description/>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  </types>
 </typeSystemDescription>

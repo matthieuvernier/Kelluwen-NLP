@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
-  <primitive>true</primitive>  <annotatorImplementationName>cl.uach.kelluwen.nlp.io.elastic.ExportDocument2Elastic</annotatorImplementationName>
+  <primitive>true</primitive>  <annotatorImplementationName>cl.uach.kelluwen.nlp.io.elastic.ExportDocumentAnalyzed2Elastic</annotatorImplementationName>
   <analysisEngineMetaData>
-    <name>ExportDocument2Elastic</name>
+    <name>ExportDocumentAnalyzed2Elastic</name>
     <description/>
     <version>1.0</version>
-    <vendor/>
+    <vendor>Kelluwen - Universidad Austral de Chile</vendor>
     <configurationParameters/>
     <configurationParameterSettings/>
     <typeSystemDescription>

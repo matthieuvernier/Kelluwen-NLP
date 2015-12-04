@@ -11,8 +11,8 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** Annotation covering simples tokens (simples words)
- * Updated by JCasGen Sun Nov 29 19:05:34 CLT 2015
- * XML source: /home/matthieu/git/Kelluwen-NLP/Kelluwen-NLP/src/main/resources/cl/uach/kelluwen/nlp/types/TypeSystem-Kelluwen-Database.xml
+ * Updated by JCasGen Mon Nov 30 19:08:37 CLT 2015
+ * XML source: /home/mvernier/git/Kelluwen-NLP/Kelluwen-NLP/src/main/resources/cl/uach/kelluwen/nlp/io/XmiCollectionReader.xml
  * @generated */
 public class Token extends Annotation {
   /** @generated

@@ -21,24 +21,25 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 
 import cl.uach.kelluwen.nlp.types.Token;
+import cl.uach.kelluwen.nlp.types.evaluation.Reference;
 import weka.classifiers.Classifier;
 import weka.classifiers.Evaluation;
-import weka.classifiers.bayes.NaiveBayes;
 import weka.classifiers.functions.SMO;
-import weka.classifiers.trees.J48;
 import weka.core.Attribute;
 import weka.core.FastVector;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.SerializationHelper;
 import weka.core.converters.ArffSaver;
+import weka.filters.Filter;
+import weka.filters.supervised.instance.Resample;
 
 public class TopicModelTrainer extends JCasAnnotator_ImplBase {
 
 	private HashMap<String,ArrayList<HashMap<String,Integer>>> instancesMap;
 	private int nbInstances=0;
-	private final static String PARAM_MODELPATH = "ModelFilename";
-	private final static String PARAM_ATTRIBUTESLISTPATH = "AttributesListFilename";
+	private final static String PARAM_MODELPATH = "modelFilename";
+	private final static String PARAM_ATTRIBUTESLISTPATH = "attributesListFilename";
 	private String modelPath;
 	private String attributesPath;
 
@@ -74,8 +75,8 @@ public class TopicModelTrainer extends JCasAnnotator_ImplBase {
 			}
 		}
 		// Finally store the instance into the global hash map
-		String theDocClass = getDocumentClass(jcas);
-
+		//String theDocClass = getDocumentClass(jcas);
+		String theDocClass = getDocumentClass2(jcas);
 
 		if (!instancesMap.containsKey(theDocClass)){
 			instancesMap.put(theDocClass, new ArrayList<HashMap<String, Integer>>());
@@ -142,33 +143,41 @@ public class TopicModelTrainer extends JCasAnnotator_ImplBase {
 				}
 			}
 
-			//System.out.println(trainingSet);
-
+			//Filter
+			Resample resampleFilter = new Resample();
+			resampleFilter.setBiasToUniformClass(0.0);
+			resampleFilter.setInvertSelection(false);
+			resampleFilter.setNoReplacement(false);
+			resampleFilter.setRandomSeed(1);
+			resampleFilter.setSampleSizePercent(100.0);
+			resampleFilter.setInputFormat(trainingSet);
+			Instances trainingSetFiltered = Filter.useFilter(trainingSet, resampleFilter);
+			
 			//5.save dataset
 			String file = "/home/mvernier/weka_test.arff";
 			ArffSaver saver = new ArffSaver();
-			saver.setInstances(trainingSet);
+			saver.setInstances(trainingSetFiltered);
 			saver.setFile(new File(file));
 			saver.writeBatch();
 
 			// Create a classifier
 			Classifier cModel = (Classifier)new SMO();
-			cModel.buildClassifier(trainingSet);
+			cModel.buildClassifier(trainingSetFiltered);
 
 			// Test the model
-			Evaluation eval = new Evaluation(trainingSet);
-			eval.crossValidateModel(cModel, trainingSet, 10, new Random(1));
+			Evaluation eval = new Evaluation(trainingSetFiltered);
+			eval.crossValidateModel(cModel, trainingSetFiltered, 10, new Random(1));
 			System.out.println(eval.toSummaryString("\nResults\n======\n", false));
 
 			// Get the confusion matrix
-			double[][] cmMatrix = eval.confusionMatrix();
+			//double[][] cmMatrix = eval.confusionMatrix();
 
 
 			//Serialization
 			SerializationHelper.write(modelPath, cModel);
 
 			// deserialize model
-			//Classifier cls = (Classifier) weka.core.SerializationHelper.read("/some/where/j48.model");
+			//Classifier cls = (Classifier) SerializationHelper.read(modelPath);
 
 
 			/*write attributes list*/
@@ -232,6 +241,17 @@ public class TopicModelTrainer extends JCasAnnotator_ImplBase {
 			return tmpClass;
 		}
 		else return null;
+	}
+	
+	private String getDocumentClass2(JCas jcas) throws AnalysisEngineProcessException {
+		// Browse tokens in the document
+		AnnotationIndex<Reference> idxReferences = jcas.getAnnotationIndex(Reference.type);
+		FSIterator<Reference> itReferences = idxReferences.iterator();
+		if ( itReferences.hasNext() ) {
+			Reference referenceAnnotation = (Reference) itReferences.next();
+			return referenceAnnotation.getTopic();
+		}
+		return null;
 	}
 
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
-  <primitive>true</primitive>  <annotatorImplementationName>cl.uach.kelluwen.nlp.engines.weka.TopicModelTrainer</annotatorImplementationName>
+  <primitive>true</primitive>  <annotatorImplementationName>cl.uach.kelluwen.nlp.engines.weka.TopicClassifier</annotatorImplementationName>
   <analysisEngineMetaData>
-    <name>TopicModelTrainer-AE</name>
+    <name>TopicClassifier-AE</name>
     <description/>
     <version>1.0</version>
     <vendor>Universidad Austral de Chile - Kelluwen</vendor>
@@ -40,7 +40,6 @@
     <typeSystemDescription>
       <imports>
         <import name="cl.uach.kelluwen.nlp.types.TypeSystem-Kelluwen-NLP"/>
-        <import name="cl.uach.kelluwen.nlp.types.TypeSystem-Kelluwen-SourceDocumentInformation"/>
       <import name="cl.uach.kelluwen.nlp.types.TypeSystem-Kelluwen-Evaluation"/>
       </imports>
     </typeSystemDescription>

@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** 
- * Updated by JCasGen Thu Nov 26 18:37:18 CLT 2015
+ * Updated by JCasGen Mon Nov 30 19:08:38 CLT 2015
  * @generated */
 public class Country_Type extends Annotation_Type {
   /** @generated 

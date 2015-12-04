@@ -54,7 +54,7 @@ public class ExportDocument2Elastic extends JCasAnnotator_ImplBase {
 							"\"title\":\""+JSONObject.escape(article.getTitle())+"\","+
 							"\"url\":\""+JSONObject.escape(article.getUrl())+"\""+
 							"}";
-					response = client.prepareIndex("documents20000", "articles")
+					response = client.prepareIndex("documents", "articles")
 							.setSource(json)
 							.get();
 				}

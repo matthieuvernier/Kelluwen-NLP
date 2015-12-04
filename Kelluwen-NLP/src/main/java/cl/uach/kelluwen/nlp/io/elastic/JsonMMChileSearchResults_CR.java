@@ -144,6 +144,9 @@ public class JsonMMChileSearchResults_CR extends CollectionReader_ImplBase {
 			System.out.println(e);
 			nb_download_fails=nb_download_fails+1;
 		}
+		catch (Exception e){
+			System.out.println(e);
+		}
 
 
 		jcas.setDocumentText(documentText2);

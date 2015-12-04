@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 import org.apache.uima.jcas.tcas.Annotation_Type;
 
 /** Annotation covering simples tokens (simples words)
- * Updated by JCasGen Sun Nov 29 19:05:34 CLT 2015
+ * Updated by JCasGen Mon Nov 30 19:08:37 CLT 2015
  * @generated */
 public class Token_Type extends Annotation_Type {
   /** @generated 
