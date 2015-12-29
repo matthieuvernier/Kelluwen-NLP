@@ -57,7 +57,7 @@ public class ElasticSearchQuery_CR extends CollectionReader_ImplBase {
 		client = node.client();
 		
 		RangeQueryBuilder query = QueryBuilders.rangeQuery("date").to(dateToString).from(dateFromString);
-		response = client.prepareSearch("documents20000")
+		response = client.prepareSearch("documents")
 		        .setTypes("articles")
 		        .setSearchType(SearchType.SCAN)
 		        .setScroll(new TimeValue(60000))
