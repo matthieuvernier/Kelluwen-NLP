@@ -199,7 +199,7 @@ public class ExportDocumentAnalyzed2Elastic extends JCasAnnotator_ImplBase {
 							}
 							json = json + keywords + "]}";
 
-							response = client.prepareIndex("documents_analyzed20000", "articles")
+							response = client.prepareIndex("documents_analyzed", "articles")
 									.setSource(json)
 									.get();
 						}

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cpeDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <collectionReader>
+        <collectionIterator>
+            <descriptor>
+                <import location="src/main/resources/cl/uach/kelluwen/nlp/io/elastic/ElasticSearchQuery_CR.xml"/>
+            </descriptor>
+            <configurationParameterSettings>
+                <nameValuePair>
+                    <name>fromDate</name>
+                    <value>
+                        <string>2015-10-30 12:00:01</string>
+                    </value>
+                </nameValuePair>
+                <nameValuePair>
+                    <name>toDate</name>
+                    <value>
+                        <string>2015-10-30 17:59:59</string>
+                    </value>
+                </nameValuePair>
+            </configurationParameterSettings>
+        </collectionIterator>
+    </collectionReader>
+    <casProcessors casPoolSize="3" processingUnitThreadCount="1">
+    <casProcessor deployment="integrated" name="Tokenization">
+        <descriptor>
+            <import location="src/main/resources/cl/uach/kelluwen/nlp/engines/preprocessing/Tokenization-AE.xml"/>
+        </descriptor>
+            <deploymentParameters/>
+        <errorHandling>
+            <errorRateThreshold action="terminate" value="0/1000"/>
+            <maxConsecutiveRestarts action="terminate" value="30"/>
+            <timeout max="100000" default="-1"/>
+        </errorHandling>
+        <checkpoint batch="10000" time="1000ms"/>
+    </casProcessor>
+    <casProcessor deployment="integrated" name="StopWords-AE">
+        <descriptor>
+            <import location="src/main/resources/cl/uach/kelluwen/nlp/engines/preprocessing/StopWords-AE.xml"/>
+        </descriptor>
+            <deploymentParameters/>
+        <errorHandling>
+            <errorRateThreshold action="terminate" value="0/1000"/>
+            <maxConsecutiveRestarts action="terminate" value="30"/>
+            <timeout max="100000" default="-1"/>
+        </errorHandling>
+        <checkpoint batch="10000" time="1000ms"/>
+        <configurationParameterSettings>
+            <nameValuePair>
+                <name>Filename</name>
+                <value>
+                    <string>/home/mvernier/git/Kelluwen-NLP/Kelluwen-NLP/src/main/resources/cl/uach/kelluwen/nlp/engines/preprocessing/stop-words-spanish.txt</string>
+                </value>
+            </nameValuePair>
+        </configurationParameterSettings>
+    </casProcessor>
+    <casProcessor deployment="integrated" name="Spanish TreeTagger-AE">
+        <descriptor>
+            <import location="src/main/resources/cl/uach/kelluwen/nlp/engines/treetagger/SpanishTreeTagger-AE.xml"/>
+        </descriptor>
+            <deploymentParameters/>
+        <errorHandling>
+            <errorRateThreshold action="terminate" value="0/1000"/>
+            <maxConsecutiveRestarts action="terminate" value="30"/>
+            <timeout max="100000" default="-1"/>
+        </errorHandling>
+        <checkpoint batch="10000" time="1000ms"/>
+        <configurationParameterSettings>
+            <nameValuePair>
+                <name>TreeTaggerHomeDirectory</name>
+                <value>
+                    <string>/home/mvernier/DEVELOPPEMENT/TreeTagger</string>
+                </value>
+            </nameValuePair>
+            <nameValuePair>
+                <name>AnnotationType</name>
+                <value>
+                    <string>cl.uach.kelluwen.nlp.types.Token</string>
+                </value>
+            </nameValuePair>
+            <nameValuePair>
+                <name>TagFeature</name>
+                <value>
+                    <string>posTreeTagger</string>
+                </value>
+            </nameValuePair>
+        </configurationParameterSettings>
+    </casProcessor>
+    <casProcessor deployment="integrated" name="Spanish TreeTagger Category Normalizer-AE">
+        <descriptor>
+            <import location="src/main/resources/cl/uach/kelluwen/nlp/engines/treetagger/SpanishCategoryNormalizer-AE.xml"/>
+        </descriptor>
+            <deploymentParameters/>
+        <errorHandling>
+            <errorRateThreshold action="terminate" value="0/1000"/>
+            <maxConsecutiveRestarts action="terminate" value="30"/>
+            <timeout max="100000" default="-1"/>
+        </errorHandling>
+        <checkpoint batch="10000" time="1000ms"/>
+    </casProcessor>
+    <casProcessor deployment="integrated" name="SpanishTextMetricAnalysis-AE">
+        <descriptor>
+            <import location="src/main/resources/cl/uach/kelluwen/nlp/engines/metrics/SpanishTextMetricAnalysis-AE.xml"/>
+        </descriptor>
+            <deploymentParameters/>
+        <errorHandling>
+            <errorRateThreshold action="terminate" value="0/1000"/>
+            <maxConsecutiveRestarts action="terminate" value="30"/>
+            <timeout max="100000" default="-1"/>
+        </errorHandling>
+        <checkpoint batch="10000" time="1000ms"/>
+    </casProcessor>
+    <casProcessor deployment="integrated" name="TopicClassifier-AE">
+        <descriptor>
+            <import location="src/main/resources/cl/uach/kelluwen/nlp/engines/weka/TopicClassifier-AE.xml"/>
+        </descriptor>
+            <deploymentParameters/>
+        <errorHandling>
+            <errorRateThreshold action="terminate" value="0/1000"/>
+            <maxConsecutiveRestarts action="terminate" value="30"/>
+            <timeout max="100000" default="-1"/>
+        </errorHandling>
+        <checkpoint batch="10000" time="1000ms"/>
+    </casProcessor>
+    <casProcessor deployment="integrated" name="GeonamesCluesSpotter-AE">
+        <descriptor>
+            <import location="src/main/resources/cl/uach/kelluwen/nlp/engines/geolocation/GeonamesCluesSpotter-AE.xml"/>
+        </descriptor>
+            <deploymentParameters/>
+        <errorHandling>
+            <errorRateThreshold action="terminate" value="0/1000"/>
+            <maxConsecutiveRestarts action="terminate" value="30"/>
+            <timeout max="100000" default="-1"/>
+        </errorHandling>
+        <checkpoint batch="10000" time="1000ms"/>
+    </casProcessor>
+    <casProcessor deployment="integrated" name="CountriesAndCitiesCimpleSpotter-AE">
+        <descriptor>
+            <import location="src/main/resources/cl/uach/kelluwen/nlp/engines/geolocation/CountriesAndCitiesCimpleSpotter-AE.xml"/>
+        </descriptor>
+            <deploymentParameters/>
+        <errorHandling>
+            <errorRateThreshold action="terminate" value="0/1000"/>
+            <maxConsecutiveRestarts action="terminate" value="30"/>
+            <timeout max="100000" default="-1"/>
+        </errorHandling>
+        <checkpoint batch="10000" time="1000ms"/>
+    </casProcessor>
+    <casProcessor deployment="integrated" name="ExportDocumentAnalyzed2Elastic">
+        <descriptor>
+            <import location="src/main/resources/cl/uach/kelluwen/nlp/io/elastic/ExportDocumentAnalyzed2Elastic.xml"/>
+        </descriptor>
+            <deploymentParameters/>
+        <errorHandling>
+            <errorRateThreshold action="terminate" value="0/1000"/>
+            <maxConsecutiveRestarts action="terminate" value="30"/>
+            <timeout max="100000" default="-1"/>
+        </errorHandling>
+        <checkpoint batch="10000" time="1000ms"/>
+    </casProcessor>
+    </casProcessors>
+    <cpeConfig>
+        <numToProcess>-1</numToProcess>
+        <deployAs>immediate</deployAs>
+        <checkpoint batch="0" time="300000ms"/>
+        <timerImpl/>
+    </cpeConfig>
+</cpeDescription>
