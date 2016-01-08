@@ -1,7 +1,10 @@
 package cl.uach.kelluwen.nlp.engines.weka;
 
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -25,7 +28,10 @@ import weka.core.Attribute;
 import weka.core.FastVector;
 import weka.core.Instance;
 import weka.core.Instances;
+import weka.core.SerializationHelper;
 import weka.core.converters.ArffSaver;
+import weka.filters.Filter;
+import weka.filters.supervised.instance.Resample;
 
 public class TopicModelTrainer2 extends JCasAnnotator_ImplBase {
 
@@ -145,7 +151,17 @@ public class TopicModelTrainer2 extends JCasAnnotator_ImplBase {
 			}
 
 			//System.out.println(trainingSet);
-
+			//Filter
+			Resample resampleFilter = new Resample();
+			resampleFilter.setBiasToUniformClass(0.0);
+			resampleFilter.setInvertSelection(false);
+			resampleFilter.setNoReplacement(false);
+			resampleFilter.setRandomSeed(1);
+			resampleFilter.setSampleSizePercent(100.0);
+			resampleFilter.setInputFormat(trainingSet);
+			Instances trainingSetFiltered = Filter.useFilter(trainingSet, resampleFilter);
+			
+			
 			//5.save dataset
 			String file = "/home/matthieu/weka_test.arff";
 			ArffSaver saver = new ArffSaver();
@@ -155,11 +171,11 @@ public class TopicModelTrainer2 extends JCasAnnotator_ImplBase {
 
 			// Create a classifier
 			Classifier cModel = (Classifier)new SMO();
-			cModel.buildClassifier(trainingSet);
+			cModel.buildClassifier(trainingSetFiltered);
 
 			// Test the model
-			Evaluation eval = new Evaluation(trainingSet);
-			eval.crossValidateModel(cModel, trainingSet, 10, new Random(1));
+			Evaluation eval = new Evaluation(trainingSetFiltered);
+			eval.crossValidateModel(cModel, trainingSetFiltered, 10, new Random(1));
 			System.out.println(eval.toSummaryString("\nResults\n======\n", false));
 
 			// Get the confusion matrix
@@ -167,16 +183,16 @@ public class TopicModelTrainer2 extends JCasAnnotator_ImplBase {
 
 
 			//Serialization
-			//SerializationHelper.write(modelPath, cModel);
+			SerializationHelper.write("/home/matthieu/SMO-Kelluwen3clases.model", cModel);
 
 			// deserialize model
-			//Classifier cls = (Classifier) weka.core.SerializationHelper.read("/some/where/j48.model");
+			//Classifier cls = (Classifier) SerializationHelper.read(modelPath);
 
 
 			/*write attributes list*/
-		/*	try {
+			try {
 				BufferedWriter out
-				= new BufferedWriter(new FileWriter(attributesPath));
+				= new BufferedWriter(new FileWriter("/home/matthieu/SMO-Kelluwen3clases.attributes"));
 
 				for (int i=0;i<mLemmas.length;i++){
 					out.write(mLemmas[i]+"\n");
@@ -184,7 +200,7 @@ public class TopicModelTrainer2 extends JCasAnnotator_ImplBase {
 				out.close();
 			} catch (IOException e) {
 				throw new AnalysisEngineProcessException(e);
-			}*/
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();

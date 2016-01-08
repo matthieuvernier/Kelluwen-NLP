@@ -96,9 +96,9 @@ public class CsvKelluwenDB_CR extends CollectionReader_ImplBase {
 			for (int i=12;i<elements.length;i++){
 				text=text+";"+elements[i];
 			}
-			if (text.length()>1){
+			/*if (text.length()>1){
 				text=text.substring(1,text.length()-1);
-			}
+			}*/
 			jcas.setDocumentText(text);
 			message.setBegin(0);
 			message.setEnd(text.length());

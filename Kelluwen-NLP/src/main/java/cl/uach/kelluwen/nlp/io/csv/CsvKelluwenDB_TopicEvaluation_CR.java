@@ -68,8 +68,8 @@ public class CsvKelluwenDB_TopicEvaluation_CR extends CollectionReader_ImplBase 
 
 		String line = stLines.nextToken();
 		String[] elements = line.split(";");
-
-		if (elements.length>=14){
+		//! be careful with number of columns...
+		if (elements.length>=13){
 			KelluwenMessage message = new KelluwenMessage(jcas); 
 			message.setMessageType(new Integer(elements[0].replace("\"", "").replace("\n", "")));
 			message.setIdMessage(new Integer(elements[1].replace("\"", "")));
@@ -86,8 +86,9 @@ public class CsvKelluwenDB_TopicEvaluation_CR extends CollectionReader_ImplBase 
 			message.addToIndexes(jcas);
 
 			String text=elements[12];
+			//String text=elements[11];
 			
-			message.setTopic(elements[13]);
+			//message.setTopic(elements[13]);
 			
 			jcas.setDocumentText(text);
 			message.setBegin(0);

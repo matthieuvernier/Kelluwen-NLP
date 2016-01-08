@@ -3,15 +3,9 @@
     <collectionReader>
         <collectionIterator>
             <descriptor>
-                <import location="Kelluwen-NLP/src/main/resources/cl/uach/kelluwen/nlp/io/csv/CsvKelluwenDB-TopicEvaluation-CR.xml"/>
+                <import location="Kelluwen-NLP/src/main/resources/cl/uach/kelluwen/nlp/io/csv/CsvKelluwenDB-CR.xml"/>
             </descriptor>
             <configurationParameterSettings>
-                <nameValuePair>
-                    <name>InputFile</name>
-                    <value>
-                        <string>/home/matthieu/DONNEES/CORPUS/Mensajes_KelluwenDB_Pretratamientos_SAMPLE303.csv</string>
-                    </value>
-                </nameValuePair>
             </configurationParameterSettings>
         </collectionIterator>
     </collectionReader>
@@ -115,6 +109,20 @@
             <timeout max="100000" default="-1"/>
         </errorHandling>
         <checkpoint batch="10000" time="1000ms"/>
+        <configurationParameterSettings>
+            <nameValuePair>
+                <name>modelFilename</name>
+                <value>
+                    <string>/home/matthieu/DONNEES/MODELE/topicSMO-3ClasesKelluwen.model</string>
+                </value>
+            </nameValuePair>
+            <nameValuePair>
+                <name>attributesListFilename</name>
+                <value>
+                    <string>/home/matthieu/DONNEES/MODELE/attributesTopicSMO-3ClasesKelluwen.list</string>
+                </value>
+            </nameValuePair>
+        </configurationParameterSettings>
     </casProcessor>
     </casProcessors>
     <cpeConfig>

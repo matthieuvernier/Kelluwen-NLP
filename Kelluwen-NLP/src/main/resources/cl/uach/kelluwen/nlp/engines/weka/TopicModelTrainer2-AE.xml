@@ -7,8 +7,36 @@
     <description/>
     <version>1.0</version>
     <vendor>Universidad Austral de Chile - Kelluwen</vendor>
-    <configurationParameters/>
-    <configurationParameterSettings/>
+    <configurationParameters>
+      <configurationParameter>
+        <name>modelFilename</name>
+        <description>path to store the serialized learning model</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>attributesListFilename</name>
+        <description>used to keep knowledge on attributes names and order</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>true</mandatory>
+      </configurationParameter>
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>modelFilename</name>
+        <value>
+          <string>/home/mvernier/DONNEES/MODELE/topicSMO.model</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>attributesListFilename</name>
+        <value>
+          <string>/home/mvernier/DONNEES/MODELE/attributesTopicSMO.list</string>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>
     <typeSystemDescription>
       <imports>
         <import name="cl.uach.kelluwen.nlp.types.TypeSystem-Kelluwen-NLP"/>

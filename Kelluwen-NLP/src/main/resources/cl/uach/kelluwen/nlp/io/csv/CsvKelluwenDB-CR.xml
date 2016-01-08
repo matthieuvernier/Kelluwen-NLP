@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <collectionReaderDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
-  <implementationName>cl.uach.kelluwen.nlp.collectionreaders.adhoc.CsvKelluwenDB_CR</implementationName>
+  <implementationName>cl.uach.kelluwen.nlp.io.csv.CsvKelluwenDB_CR</implementationName>
   <processingResourceMetaData>
     <name>CsvKelluwenDB-CR</name>
     <description>CollectionReader used to read datas from a CSV file containing datas froñ Kelluwen platform</description>
